@@ -1,0 +1,48 @@
+Austin PF1 Database GUI Schedule Weekend Fridays
+Madison PF1 Basic C# Weekends Fridays
+Zach PF1 PHP Javascript Everything Anytime Fridays
+Oscar GUI PF1 Python Tuesdays Thursdays Fridays before 4 and Saturdays
+Kris Most anything html Mobile App PF3 Logics Weekends and some evenings.
+Cody Good with everything. Debugging PHP Javascript html Anytime that I don't have class.
+Alex html GUI debugging Fridays Class time, subject to change.
+Jacob html debugging and code optimization Long weekends Needs laptop and VS 2013 Start GoFundME!
+Claudia GUI help with Basics Fridays Class Time
+
+
+Two programs
+
+First
+First GUI 
+Determine Registerd User and Drivein.
+If Drivein
+	Give Parking number if vacant
+else
+	Reject
+If Registerd User
+	ask for customer number
+		if yes and resv
+			allow
+		else if yes and no resv but vacant
+			allow
+		else if yes and no but no vacant
+			reject 
+	
+
+Second GUI
+reads licenses plate
+	if not in database
+		ask for customer number
+			records new license plate
+				if they have a resv
+					finds the next parking place
+					puts their lp num in that spot for the array/list
+				if no resv
+					looks for vacants with time duration
+					if vacant and time duration allows
+						allow
+					else
+						reject
+
+Austin Madison Claudia - First GUI
+Zach Jacob and Alex - Webpage
+Oscar, Cody, Kris - Second GUI
