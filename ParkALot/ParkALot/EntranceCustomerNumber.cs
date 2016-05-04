@@ -49,6 +49,7 @@ namespace ParkALot
 
         private void button11_Click_1(object sender, EventArgs e)
         {
+
             displayScreen.lb_WalkinWarning.Hide();
             displayScreen.lb_ResCusWarning.Hide();
             displayScreen.bn_ResCust.Hide();

@@ -16,6 +16,8 @@ namespace ParkALot
     public partial class LicensePlate : Form 
     {
         private ElevatorDisplayScreen elevatorDisplayScreen;
+        private EntranceDisplayScreen entranceDisplayScreen;
+        private EntranceDisplayScreen displayScreen;
 
         public LicensePlate()
         {
@@ -29,9 +31,15 @@ namespace ParkALot
             InitializeComponent();
         }
 
+        public LicensePlate(EntranceDisplayScreen entranceDisplayScreen)
+        {
+            // TODO: Complete member initialization
+            this.entranceDisplayScreen = entranceDisplayScreen;
+        }
+
         private void bn_LPRead_Click(object sender, EventArgs e)
         {
-            ElevatorCustomerNumber newResCustomer = new ElevatorCustomerNumber(elevatorDisplayScreen);
+            EntranceCustomerNumber newResCustomer = new EntranceCustomerNumber(displayScreen);
             newResCustomer.Show();
             elevatorDisplayScreen.lb_Display.Text = "License plate not found.  Please enter your Customer Number.";
             this.Close();
