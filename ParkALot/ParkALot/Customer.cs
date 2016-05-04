@@ -8,11 +8,11 @@ namespace ParkALot
 {
     class Customer
     {
-        public string FullName { get; set; }
-        public string CustNum { get; set; }
-        public string Date { get; set; }
-        public string TimeStart { get; set; }
-        public string TimeEnd { get; set; }
-        public string LicensePlate { get; set; }
+        public static string FullName { get; set; }
+        public static string CustNum { get; set; }
+        public static string Date { get; set; }
+        public static string TimeStart { get; set; }
+        public static string TimeEnd { get; set; }
+        public static string LicensePlate { get; set; }
     }
 }

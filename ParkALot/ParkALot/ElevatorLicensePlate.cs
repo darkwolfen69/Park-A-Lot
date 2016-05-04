@@ -31,8 +31,7 @@ namespace ParkALot
 
         private void bn_LPRead_Click(object sender, EventArgs e)
         {
-            Customer info = new Customer();
-            elevatorDisplayScreen.lb_Display.Text = info.LicensePlate;
+            elevatorDisplayScreen.lb_Display.Text = Customer.LicensePlate;
 
             // Compare entered text with text in the database
             // If it matches a number then go to reservation screen

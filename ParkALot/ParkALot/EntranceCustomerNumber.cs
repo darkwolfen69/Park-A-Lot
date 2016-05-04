@@ -13,7 +13,6 @@ namespace ParkALot
     public partial class EntranceCustomerNumber : Form
     {
         private EntranceDisplayScreen displayScreen;
-        private Customer information;
 
         public EntranceCustomerNumber()
         {
@@ -30,11 +29,10 @@ namespace ParkALot
             button10.Click += GenerateNumber;
         }
 
-        public EntranceCustomerNumber(EntranceDisplayScreen displayScreen, Customer information)
+        public EntranceCustomerNumber(EntranceDisplayScreen displayScreen)
         {
             // TODO: Complete member initialization
             this.displayScreen = displayScreen;
-            this.information = information;
             InitializeComponent();
         }
 
@@ -51,8 +49,7 @@ namespace ParkALot
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-            Customer info = new Customer();
-            info.CustNum = customerNumber.Text;
+            Customer.CustNum = customerNumber.Text;
 
             displayScreen.lb_WalkinWarning.Hide();
             displayScreen.lb_ResCusWarning.Hide();

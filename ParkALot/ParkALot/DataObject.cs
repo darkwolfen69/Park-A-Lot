@@ -103,7 +103,6 @@ namespace ParkALot
 
         public void ReturnBasedOnLicensePlateNumber(string licensePlateNumber)
         {
-            Customer newCust = new Customer();
             SqlConnection connection = new SqlConnection();
 
             List<string> output = new List<string>();
@@ -121,12 +120,12 @@ namespace ParkALot
 
                     while (reader.Read())
                     {
-                        newCust.CustNum = reader.GetInt32(0).ToString();
-                        newCust.FullName = reader.GetString(1);
-                        newCust.FullName += " " + reader.GetString(2);
-                        newCust.Date = reader.GetSqlDateTime(3).ToString();
-                        newCust.TimeStart = reader.GetSqlDateTime(4).ToString();
-                        newCust.TimeEnd = reader.GetSqlDateTime(5).ToString();
+                        Customer.CustNum = reader.GetInt32(0).ToString();
+                        Customer.FullName = reader.GetString(1);
+                        Customer.FullName += " " + reader.GetString(2);
+                        Customer.Date = reader.GetSqlDateTime(3).ToString();
+                        Customer.TimeStart = reader.GetSqlDateTime(4).ToString();
+                        Customer.TimeEnd = reader.GetSqlDateTime(5).ToString();
                     }
                 }
             }
