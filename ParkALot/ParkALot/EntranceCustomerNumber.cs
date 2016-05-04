@@ -13,6 +13,7 @@ namespace ParkALot
     public partial class EntranceCustomerNumber : Form
     {
         private EntranceDisplayScreen displayScreen;
+        private Customer information;
 
         public EntranceCustomerNumber()
         {
@@ -29,10 +30,11 @@ namespace ParkALot
             button10.Click += GenerateNumber;
         }
 
-        public EntranceCustomerNumber(EntranceDisplayScreen displayScreen)
+        public EntranceCustomerNumber(EntranceDisplayScreen displayScreen, Customer information)
         {
             // TODO: Complete member initialization
             this.displayScreen = displayScreen;
+            this.information = information;
             InitializeComponent();
         }
 

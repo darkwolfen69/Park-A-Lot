@@ -101,7 +101,7 @@ namespace ParkALot
             return exists;
         }
 
-        public List<string> ReturnBasedOnLicensePlateNumber(string licensePlateNumber)
+        public void ReturnBasedOnLicensePlateNumber(string licensePlateNumber)
         {
             Customer newCust = new Customer();
             SqlConnection connection = new SqlConnection();
@@ -132,8 +132,6 @@ namespace ParkALot
             }
 
             connection.Close();
-
-            return output;
         }
 
         public void InsertNewReservation(int customerNumber, int licensePlateNumber, int dayOfReservation,
@@ -153,6 +151,12 @@ namespace ParkALot
             }
 
             connection.Close();
+        }
+
+        public void CustomerExit(string licensePlate)
+        {
+            //This method needs to update the end time for registered customers.  Walkin customers will also pass by this license plate
+            //reader, so it only needs to work if the license plate is in the database.  Could make possible use of one of the methods above.
         }
     }
 }
