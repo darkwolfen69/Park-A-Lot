@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs" />
     <Compile Include="DataObject.cs" />
     <Compile Include="ElevatorReservationTime.cs">
       <SubType>Form</SubType>
@@ -75,16 +76,16 @@
     <Compile Include="ElevatorDisplayScreen.Designer.cs">
       <DependentUpon>ElevatorDisplayScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="LicensePlate.cs">
+    <Compile Include="ElevatorLicensePlate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LicensePlate.Designer.cs">
-      <DependentUpon>LicensePlate.cs</DependentUpon>
+    <Compile Include="ElevatorLicensePlate.Designer.cs">
+      <DependentUpon>ElevatorLicensePlate.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LicensePlate.resx">
-      <DependentUpon>LicensePlate.cs</DependentUpon>
+    <EmbeddedResource Include="ElevatorLicensePlate.resx">
+      <DependentUpon>ElevatorLicensePlate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ElevatorReservationTime.resx">
       <DependentUpon>ElevatorReservationTime.cs</DependentUpon>

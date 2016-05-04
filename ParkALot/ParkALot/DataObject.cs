@@ -101,42 +101,9 @@ namespace ParkALot
             return exists;
         }
 
-        public List<string> ReturnBasedOnCustomer(int customerNumber)
-        {
-            SqlConnection connection = new SqlConnection();
-
-            List<string> output = new List<string>();
-
-            connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
-            connection.Open();
-
-            using (SqlCommand getAllCustomers = connection.CreateCommand())
-            {
-                getAllCustomers.CommandText = "select CustomerID, FirstName, LastName, DayOfReservation, TimeIn, TimveOut from dbo.Demographic JOIN dbo.Reservation WHERE CustomerID = " 
-                                               + customerNumber + " AND dbo.Demographic.CustomerID = dbo.Reservation.CustomerID;";
-
-                using (SqlDataReader reader = getAllCustomers.ExecuteReader())
-                {
-
-                    while (reader.Read())
-                    {
-                        output.Add(reader.GetInt32(0).ToString());
-                        output.Add(reader.GetString(1));
-                        output.Add(reader.GetString(2));
-                        output.Add(reader.GetSqlDateTime(3).ToString());
-                        output.Add(reader.GetSqlDateTime(4).ToString());
-                        output.Add(reader.GetSqlDateTime(5).ToString());
-                    }
-                }
-            }
-
-            connection.Close();
-
-            return output;
-        }
-
         public List<string> ReturnBasedOnLicensePlateNumber(string licensePlateNumber)
         {
+            Customer newCust = new Customer();
             SqlConnection connection = new SqlConnection();
 
             List<string> output = new List<string>();
@@ -146,7 +113,7 @@ namespace ParkALot
 
             using (SqlCommand getAllCustomers = connection.CreateCommand())
             {
-                getAllCustomers.CommandText = "select CustomerID, FirstName, LastName, DayOfReservation, TimeIn, TimveOut from dbo.Demographic JOIN dbo.Reservation WHERE PlateNumber = "
+                getAllCustomers.CommandText = "select CustomerID, FirstName, LastName, DayOfReservation, TimeIn, TimeOut from dbo.Demographic JOIN dbo.Reservation WHERE PlateNumber = "
                                                + licensePlateNumber + " AND dbo.Demographic.CustomerID = dbo.Reservation.CustomerID;";
 
                 using (SqlDataReader reader = getAllCustomers.ExecuteReader())
@@ -154,12 +121,12 @@ namespace ParkALot
 
                     while (reader.Read())
                     {
-                        output.Add(reader.GetInt32(0).ToString());
-                        output.Add(reader.GetString(1));
-                        output.Add(reader.GetString(2));
-                        output.Add(reader.GetSqlDateTime(3).ToString());
-                        output.Add(reader.GetSqlDateTime(4).ToString());
-                        output.Add(reader.GetSqlDateTime(5).ToString());
+                        newCust.CustNum = reader.GetInt32(0).ToString();
+                        newCust.FullName = reader.GetString(1);
+                        newCust.FullName += " " + reader.GetString(2);
+                        newCust.Date = reader.GetSqlDateTime(3).ToString();
+                        newCust.TimeStart = reader.GetSqlDateTime(4).ToString();
+                        newCust.TimeEnd = reader.GetSqlDateTime(5).ToString();
                     }
                 }
             }

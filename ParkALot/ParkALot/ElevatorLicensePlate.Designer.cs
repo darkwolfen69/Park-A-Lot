@@ -1,6 +1,6 @@
 ﻿namespace ParkALot
 {
-    partial class LicensePlate
+    partial class ElevatorLicensePlate
     {
         /// <summary>
         /// Required designer variable.

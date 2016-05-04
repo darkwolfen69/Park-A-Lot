@@ -13,25 +13,25 @@ using System.Data.Sql;
 
 namespace ParkALot
 {
-    public partial class LicensePlate : Form 
+    public partial class ElevatorLicensePlate : Form 
     {
         private ElevatorDisplayScreen elevatorDisplayScreen;
         private EntranceDisplayScreen entranceDisplayScreen;
         private EntranceDisplayScreen displayScreen;
 
-        public LicensePlate()
+        public ElevatorLicensePlate()
         {
             InitializeComponent();
         }
 
-        public LicensePlate(ElevatorDisplayScreen elevatorDisplayScreen)
+        public ElevatorLicensePlate(ElevatorDisplayScreen elevatorDisplayScreen)
         {
             // TODO: Complete member initialization
             this.elevatorDisplayScreen = elevatorDisplayScreen;
             InitializeComponent();
         }
 
-        public LicensePlate(EntranceDisplayScreen entranceDisplayScreen)
+        public ElevatorLicensePlate(EntranceDisplayScreen entranceDisplayScreen)
         {
             // TODO: Complete member initialization
             this.entranceDisplayScreen = entranceDisplayScreen;

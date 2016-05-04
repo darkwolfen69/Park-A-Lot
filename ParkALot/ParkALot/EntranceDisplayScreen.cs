@@ -43,7 +43,7 @@ namespace ParkALot
 
         private void bn_ResCust_Click(object sender, EventArgs e)
         {
-            LicensePlate newVehicle = new LicensePlate(this);
+            ElevatorLicensePlate newVehicle = new ElevatorLicensePlate(this);
             newVehicle.Show();
         }
 
