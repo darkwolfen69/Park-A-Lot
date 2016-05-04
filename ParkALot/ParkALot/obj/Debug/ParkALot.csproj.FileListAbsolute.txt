@@ -89,3 +89,4 @@ C:\Users\Cody\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.csproj.Gen
 C:\Users\Cody\Desktop\Park-A-Lot\ParkALot\ParkALot\bin\Debug\ParkALot.exe
 C:\Users\Cody\Desktop\Park-A-Lot\ParkALot\ParkALot\bin\Debug\ParkALot.pdb
 C:\Users\Cody\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.ElevatorLicensePlate.resources
+C:\Users\Cody\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.Marquee.resources

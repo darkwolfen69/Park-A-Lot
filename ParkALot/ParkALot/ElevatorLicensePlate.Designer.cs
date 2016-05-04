@@ -53,7 +53,6 @@
             this.bn_LPRead.TabIndex = 50;
             this.bn_LPRead.Text = "Searching";
             this.bn_LPRead.UseVisualStyleBackColor = true;
-            this.bn_LPRead.Click += new System.EventHandler(this.bn_LPRead_Click_1);
             // 
             // tb_LPNum
             // 
@@ -85,7 +84,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ElevatorLicensePlate";
             this.Text = "Park-A-Lot: Elevator";
-            this.Load += new System.EventHandler(this.ElevatorLicensePlate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

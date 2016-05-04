@@ -45,5 +45,11 @@ namespace ParkALot
         {
 
         }
+
+        private void EntranceDisplayScreen_Load(object sender, EventArgs e)
+        {
+            Marquee newMarquee = new Marquee();
+            newMarquee.Show();
+        }
     }
 }

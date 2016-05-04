@@ -78,7 +78,6 @@
             this.lb_Display.Size = new System.Drawing.Size(500, 26);
             this.lb_Display.TabIndex = 42;
             this.lb_Display.Text = "Reading license plate.  Please, keep your vehicle stopped.";
-            this.lb_Display.TextChanged += new System.EventHandler(this.lb_Display_TextChanged);
             // 
             // ElevatorDisplayScreen
             // 

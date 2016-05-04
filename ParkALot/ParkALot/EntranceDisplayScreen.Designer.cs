@@ -150,7 +150,7 @@
             this.label1.Text = "Park-A-Lot © 2016";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DisplayScreen
+            // EntranceDisplayScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -165,8 +165,9 @@
             this.Controls.Add(this.bn_ResCust);
             this.Controls.Add(this.bn_walkin);
             this.Controls.Add(this.lb_header);
-            this.Name = "DisplayScreen";
+            this.Name = "EntranceDisplayScreen";
             this.Text = "Park-A-Lot";
+            this.Load += new System.EventHandler(this.EntranceDisplayScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

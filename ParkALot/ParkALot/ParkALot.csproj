@@ -82,6 +82,13 @@
     <Compile Include="ElevatorLicensePlate.Designer.cs">
       <DependentUpon>ElevatorLicensePlate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Marquee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marquee.Designer.cs">
+      <DependentUpon>Marquee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parking.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ElevatorLicensePlate.resx">
@@ -101,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ElevatorDisplayScreen.resx">
       <DependentUpon>ElevatorDisplayScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marquee.resx">
+      <DependentUpon>Marquee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
