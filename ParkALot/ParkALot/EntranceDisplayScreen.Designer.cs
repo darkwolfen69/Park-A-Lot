@@ -128,7 +128,6 @@
             this.lb_Ticket.TabIndex = 7;
             this.lb_Ticket.Text = "---";
             this.lb_Ticket.Visible = false;
-            this.lb_Ticket.TextChanged += new System.EventHandler(this.lb_Ticket_TextChanged);
             // 
             // lb_ParkingInstructions
             // 

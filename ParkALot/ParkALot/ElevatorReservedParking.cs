@@ -40,7 +40,7 @@ namespace ParkALot
         {
             System.Timers.Timer myTimer = (System.Timers.Timer)sender;
             myTimer.Stop();
-            Application.Restart();
+            //Application.Restart();
         }
 
         private void bn_Yes_Click(object sender, EventArgs e)

@@ -69,7 +69,7 @@ namespace ParkALot
         {
             System.Timers.Timer myTimer = (System.Timers.Timer)sender;
             myTimer.Stop();
-            Application.Restart();
+            //Application.Restart();
         }
     }
 }

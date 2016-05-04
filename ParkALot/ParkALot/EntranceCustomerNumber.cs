@@ -39,7 +39,7 @@ namespace ParkALot
         public void GenerateNumber(object sender, EventArgs e)
         {
             var buttonNumber = sender as Button;
-            textBox1.Text += buttonNumber.Text;
+            customerNumber.Text += buttonNumber.Text;
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -49,6 +49,8 @@ namespace ParkALot
 
         private void button11_Click_1(object sender, EventArgs e)
         {
+            Customer info = new Customer();
+            info.CustNum = customerNumber.Text;
 
             displayScreen.lb_WalkinWarning.Hide();
             displayScreen.lb_ResCusWarning.Hide();

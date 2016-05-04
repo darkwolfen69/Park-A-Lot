@@ -37,54 +37,52 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(190, 96);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(240, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
-            this.label2.TabIndex = 47;
+            this.label2.Size = new System.Drawing.Size(126, 17);
+            this.label2.TabIndex = 51;
             this.label2.Text = "Park-A-Lot © 2016";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bn_LPRead
             // 
-            this.bn_LPRead.Location = new System.Drawing.Point(112, 73);
-            this.bn_LPRead.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bn_LPRead.Location = new System.Drawing.Point(136, 90);
+            this.bn_LPRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bn_LPRead.Name = "bn_LPRead";
-            this.bn_LPRead.Size = new System.Drawing.Size(69, 34);
-            this.bn_LPRead.TabIndex = 46;
+            this.bn_LPRead.Size = new System.Drawing.Size(92, 42);
+            this.bn_LPRead.TabIndex = 50;
             this.bn_LPRead.Text = "Searching";
             this.bn_LPRead.UseVisualStyleBackColor = true;
-            this.bn_LPRead.Click += new System.EventHandler(this.bn_LPRead_Click);
+            this.bn_LPRead.Click += new System.EventHandler(this.bn_LPRead_Click_1);
             // 
             // tb_LPNum
             // 
-            this.tb_LPNum.Location = new System.Drawing.Point(30, 50);
-            this.tb_LPNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_LPNum.Location = new System.Drawing.Point(27, 62);
+            this.tb_LPNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_LPNum.Name = "tb_LPNum";
-            this.tb_LPNum.Size = new System.Drawing.Size(236, 20);
-            this.tb_LPNum.TabIndex = 45;
+            this.tb_LPNum.Size = new System.Drawing.Size(313, 22);
+            this.tb_LPNum.TabIndex = 49;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(24, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 26);
-            this.label1.TabIndex = 44;
+            this.label1.Size = new System.Drawing.Size(316, 34);
+            this.label1.TabIndex = 48;
             this.label1.Text = "License plate reader is currently scanning your \r\nlicense plate.  Please keep you" +
     "r vehicle stopped.";
             // 
             // ElevatorLicensePlate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 117);
+            this.ClientSize = new System.Drawing.Size(391, 144);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bn_LPRead);
             this.Controls.Add(this.tb_LPNum);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ElevatorLicensePlate";
             this.Text = "Park-A-Lot: Elevator";
             this.Load += new System.EventHandler(this.ElevatorLicensePlate_Load);
@@ -99,6 +97,7 @@
         private System.Windows.Forms.Button bn_LPRead;
         private System.Windows.Forms.TextBox tb_LPNum;
         private System.Windows.Forms.Label label1;
+
 
     }
 }

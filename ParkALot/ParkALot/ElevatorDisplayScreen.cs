@@ -22,16 +22,5 @@ namespace ParkALot
             ElevatorLicensePlate newVehicle = new ElevatorLicensePlate(this);
             newVehicle.Show();
         }
-
-        private void lb_Display_TextChanged(object sender, EventArgs e)
-        {
-            if (lb_Display.Text.Contains("You do not have a reservation!"))
-            {
-                ElevatorReservedParking newReservation = new ElevatorReservedParking(this);
-                newReservation.Show();
-
-            }
-        }
-
     }
 }

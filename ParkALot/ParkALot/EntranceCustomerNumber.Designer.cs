@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.customerNumber = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -53,12 +53,12 @@
             this.label1.Text = "Park-A-Lot © 2016";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // customerNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 22);
-            this.textBox1.TabIndex = 37;
+            this.customerNumber.Location = new System.Drawing.Point(22, 17);
+            this.customerNumber.Name = "customerNumber";
+            this.customerNumber.Size = new System.Drawing.Size(237, 22);
+            this.customerNumber.TabIndex = 37;
             // 
             // button11
             // 
@@ -160,13 +160,13 @@
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // CustomerNumber
+            // EntranceCustomerNumber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.customerNumber);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button7);
@@ -178,7 +178,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "CustomerNumber";
+            this.Name = "EntranceCustomerNumber";
             this.Text = "Park-A-Lot";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,7 +188,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox customerNumber;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button7;

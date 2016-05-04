@@ -16,8 +16,6 @@ namespace ParkALot
     public partial class ElevatorLicensePlate : Form 
     {
         private ElevatorDisplayScreen elevatorDisplayScreen;
-        private EntranceDisplayScreen entranceDisplayScreen;
-        private EntranceDisplayScreen displayScreen;
 
         public ElevatorLicensePlate()
         {
@@ -31,26 +29,10 @@ namespace ParkALot
             InitializeComponent();
         }
 
-        public ElevatorLicensePlate(EntranceDisplayScreen entranceDisplayScreen)
-        {
-            // TODO: Complete member initialization
-            this.entranceDisplayScreen = entranceDisplayScreen;
-        }
-
         private void bn_LPRead_Click(object sender, EventArgs e)
         {
-            EntranceCustomerNumber newResCustomer = new EntranceCustomerNumber(displayScreen);
-            newResCustomer.Show();
-            elevatorDisplayScreen.lb_Display.Text = "License plate not found.  Please enter your Customer Number.";
-            this.Close();
-        }
-
-        private void ElevatorLicensePlate_Load(object sender, EventArgs e)
-        {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
-            connection.Open();
-            connection.Close();
+            Customer info = new Customer();
+            elevatorDisplayScreen.lb_Display.Text = info.LicensePlate;
 
             // Compare entered text with text in the database
             // If it matches a number then go to reservation screen
@@ -66,7 +48,8 @@ namespace ParkALot
             {
                 // Display no reservation
             }
-   
+
+            this.Close();
         }
     }
 }

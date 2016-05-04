@@ -38,25 +38,12 @@ namespace ParkALot
         {
             System.Timers.Timer myTimer = (System.Timers.Timer)sender;
             myTimer.Stop();
-            Application.Restart();
+            //Application.Restart();
         }
 
         private void bn_ResCust_Click(object sender, EventArgs e)
         {
-            ElevatorLicensePlate newVehicle = new ElevatorLicensePlate(this);
-            newVehicle.Show();
-        }
 
-        private void lb_Ticket_TextChanged(object sender, EventArgs e)
-        {
-            if (lb_Ticket.Text == "Thank you!")
-            {
-                ElevatorDisplayScreen newResCust = new ElevatorDisplayScreen();
-                newResCust.Show();
-                //this.Hide();
-            }
         }
-
-        
     }
 }
