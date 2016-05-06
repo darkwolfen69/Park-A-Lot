@@ -133,7 +133,7 @@ namespace ParkALot
             connection.Close();
         }
 
-        public void InsertNewReservation(int customerNumber, int licensePlateNumber, int dayOfReservation,
+        public void InsertNewReservation(int customerNumber, string licensePlateNumber, int dayOfReservation,
                                          int timeIn, int timeOut)
         {
             SqlConnection connection = new SqlConnection();

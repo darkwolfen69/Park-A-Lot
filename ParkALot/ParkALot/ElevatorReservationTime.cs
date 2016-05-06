@@ -57,12 +57,30 @@ namespace ParkALot
 
         private void bn_Submit_Click(object sender, EventArgs e)
         {
-            this.Close();
-            elevatorDisplayScreen.lb_Display.Text = "No reservations for that time.\nPlease exit the garage.";
-            System.Timers.Timer myTimer = new System.Timers.Timer();
-            myTimer.Elapsed += myTimer_Elapsed;
-            myTimer.Interval = 5000;
-            myTimer.Start();
+            DataObject DO = new DataObject();
+
+            int cusNum = 0;
+            int timeStart = 0;
+            int timeEnd = 0;
+            int day = 0;
+            int.TryParse(Customer.CustNum, out cusNum);
+            int.TryParse(Customer.TimeStart, out timeStart);
+            int.TryParse(Customer.TimeEnd, out timeEnd);
+            int.TryParse(Customer.Date, out day);
+            
+
+            if ()
+            {
+                DO.InsertNewReservation(cusNum,Customer.LicensePlate, day,timeStart,timeEnd);
+                elevatorDisplayScreen.lb_Display.Text = Customer.FullName + "\n" + "Parking Spot /n" + Customer.TimeStart + " - " + Customer.TimeEnd;
+            }
+            else
+            {
+                this.Close();
+                elevatorDisplayScreen.lb_Display.Text = "No reservations for that time.\nPlease exit the garage.";
+            }
+            
+            
         }
 
         public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
