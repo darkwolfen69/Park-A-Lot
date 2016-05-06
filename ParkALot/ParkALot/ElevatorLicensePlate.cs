@@ -29,26 +29,31 @@ namespace ParkALot
             InitializeComponent();
         }
 
-        private void bn_LPRead_Click(object sender, EventArgs e)
+ private void bn_LPRead_Click(object sender, EventArgs e)
         {
-            elevatorDisplayScreen.lb_Display.Text = Customer.LicensePlate;
+            //EntranceCustomerNumber newResCustomer = new EntranceCustomerNumber(elevatorDisplayScreen);
+            //newResCustomer.Show();
+            //elevatorDisplayScreen.lb_Display.Text = "License plate not found.  Please enter your Customer Number.";
+            DataObject dataObject = new DataObject();
+            
 
-            // Compare entered text with text in the database
-            // If it matches a number then go to reservation screen
-            // If not go to 
-            DataObject connection2 = new DataObject();
-            //List<String> list1 = connection2.ReturnBasedOnLicensePlateNumber(tb_LPNum.Text);
-
-            if (connection2.DetermineIfCustomerExistsByLicense(tb_LPNum.Text))
+            if (dataObject.DetermineIfCustomerExistsByLicense(tb_LPNum.Text) == true)
             {
-                // Display customer information and reservation
+                if (Customer.Date != null) //determine if there is a reservation
+                {
+                    dataObject.ReturnBasedOnLicensePlateNumber(tb_LPNum.Text);
+                    //ElevatorReservedParking ERP = new ElevatorReservedParking(elevatorDisplayScreen);
+                    //ERP.Show();
+                }
             }
             else
             {
-                // Display no reservation
+                ElevatorReservationTime ERT = new ElevatorReservationTime(elevatorDisplayScreen);
+                ERT.Show();
+
             }
+
 
             this.Close();
         }
-    }
 }
