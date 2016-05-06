@@ -199,10 +199,32 @@ namespace ParkALot
                 updateReservation.ExecuteNonQuery();
             }
 
+            connection.Close();
 
         }
 
-        
+        public int ReturnNumberOfParkingSpotsAvailable()
+        {
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
+            connection.Open();
+            int parkingCounter = 0;
+            using(SqlCommand getAvailableParkingSpots = new SqlCommand())
+            {
+                getAvailableParkingSpots.CommandText = "SELECT * FROM dbo.Parking WHERE IsAvailable = True;";
+                using(SqlDataReader reader = getAvailableParkingSpots.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        parkingCounter++;
+                    }
+                }
+            }
+
+            return parkingCounter;
+
+        }
+
 
         public void CustomerExit(string licensePlate)
         {
