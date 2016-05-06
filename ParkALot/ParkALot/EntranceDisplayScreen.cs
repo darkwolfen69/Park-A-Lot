@@ -42,9 +42,18 @@ namespace ParkALot
         }
 
         private void bn_ResCust_Click(object sender, EventArgs e)
-        {
+        {   
             EntranceLicensePlate ELP = new EntranceLicensePlate();
+            EntranceDisplayScreen EDS = new EntranceDisplayScreen();
             ELP.Show();
+            EDS.lb_WalkinWarning.Hide();
+            EDS.lb_ResCusWarning.Hide();
+            EDS.bn_ResCust.Hide();
+            EDS.bn_walkin.Hide();
+            EDS.lb_Ticket.Hide();
+            EDS.lb_ParkingInstructions.Hide();
+            EDS.lb_OptDetail.Hide();
+            EDS.lb_WalkinHeader.Show();
         }
 
         private void EntranceDisplayScreen_Load(object sender, EventArgs e)
