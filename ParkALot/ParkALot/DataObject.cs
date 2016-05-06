@@ -105,7 +105,7 @@ namespace ParkALot
         {
             SqlConnection connection = new SqlConnection();
 
-            List<string> output = new List<string>();
+            //List<string> output = new List<string>();
 
             connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
             connection.Open();
@@ -151,6 +151,58 @@ namespace ParkALot
 
             connection.Close();
         }
+
+        public void UpdateCustomerWithLicensePlate(int customerNumber, string licenseNumber)
+        {
+            SqlConnection connection = new SqlConnection();
+
+            connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
+            connection.Open();
+
+            using (SqlCommand updateCustomer = new SqlCommand())
+            {
+                updateCustomer.CommandText = "UPDATE dbo.Demographic SET PlateNumber ='" + licenseNumber + "' WHERE CustomerID =" + customerNumber + ";";
+                updateCustomer.ExecuteNonQuery();
+            }
+
+            connection.Close();
+        }
+
+        public void UpdateReservationWithParkingID(int customerNumber)
+        {
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
+            connection.Open();
+
+            int parkingID = 0;
+
+            using(SqlCommand getParkingID = connection.CreateCommand())
+            {
+                getParkingID.CommandText = "SELECT TOP 1 ParkingSpaceID FROM dbo.Parking WHERE IsAvailable = True;";
+
+                using(SqlDataReader reader = getParkingID.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        parkingID = reader.GetInt32(0);
+                    }
+                }
+            }
+
+            using(SqlCommand updateReservation = new SqlCommand())
+            {
+                updateReservation.CommandText = "UPDATE dbo.Reservation SET ParkingSpaceID =" +
+                                                 parkingID + " WHERE CustomerID =" + customerNumber + ";";
+                updateReservation.ExecuteNonQuery();
+
+                updateReservation.CommandText = "UPDATE dbo.Parking SET IsAvailable= False WHERE ParkingSpaceID =" + parkingID + ";";
+                updateReservation.ExecuteNonQuery();
+            }
+
+
+        }
+
+        
 
         public void CustomerExit(string licensePlate)
         {
