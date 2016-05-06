@@ -94,3 +94,6 @@ C:\Users\Cody\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.ExitLicens
 C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\bin\Debug\ParkALot.exe.config
 C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.exe
 C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.pdb
+C:\Users\Madison\Documents\GitHub\Park-A-Lot\ParkALot\ParkALot\bin\Debug\ParkALot.exe.config
+C:\Users\Madison\Documents\GitHub\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.exe
+C:\Users\Madison\Documents\GitHub\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.pdb

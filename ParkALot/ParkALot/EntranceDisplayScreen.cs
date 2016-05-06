@@ -43,7 +43,8 @@ namespace ParkALot
 
         private void bn_ResCust_Click(object sender, EventArgs e)
         {
-
+            EntranceLicensePlate ELP = new EntranceLicensePlate();
+            ELP.Show();
         }
 
         private void EntranceDisplayScreen_Load(object sender, EventArgs e)
