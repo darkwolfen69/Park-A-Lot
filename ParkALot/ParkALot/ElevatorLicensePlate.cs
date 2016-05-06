@@ -13,7 +13,7 @@ using System.Data.Sql;
 
 namespace ParkALot
 {
-    public partial class ElevatorLicensePlate : Form 
+    public partial class ElevatorLicensePlate : Form
     {
         private ElevatorDisplayScreen elevatorDisplayScreen;
 
@@ -29,13 +29,13 @@ namespace ParkALot
             InitializeComponent();
         }
 
- private void bn_LPRead_Click(object sender, EventArgs e)
+        private void bn_LPRead_Click(object sender, EventArgs e)
         {
             //EntranceCustomerNumber newResCustomer = new EntranceCustomerNumber(elevatorDisplayScreen);
             //newResCustomer.Show();
             //elevatorDisplayScreen.lb_Display.Text = "License plate not found.  Please enter your Customer Number.";
             DataObject dataObject = new DataObject();
-            
+
 
             if (dataObject.DetermineIfCustomerExistsByLicense(tb_LPNum.Text) == true)
             {
@@ -60,4 +60,5 @@ namespace ParkALot
 
             this.Close();
         }
+    }
 }
