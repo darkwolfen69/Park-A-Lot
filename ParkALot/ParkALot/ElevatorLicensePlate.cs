@@ -44,6 +44,10 @@ namespace ParkALot
                     dataObject.ReturnBasedOnLicensePlateNumber(tb_LPNum.Text);
                     //ElevatorReservedParking ERP = new ElevatorReservedParking(elevatorDisplayScreen);
                     //ERP.Show();
+                    ElevatorDisplayScreen EDS = new ElevatorDisplayScreen();
+                    EDS.lb_Display.Text = Customer.FullName + "\n" + "Parking Spot /n" + Customer.TimeStart + " - " + Customer.TimeEnd;
+
+
                 }
             }
             else
