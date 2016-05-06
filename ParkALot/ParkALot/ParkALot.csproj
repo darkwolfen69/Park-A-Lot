@@ -82,6 +82,12 @@
     <Compile Include="ElevatorLicensePlate.Designer.cs">
       <DependentUpon>ElevatorLicensePlate.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntranceLicensePlate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntranceLicensePlate.Designer.cs">
+      <DependentUpon>EntranceLicensePlate.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExitLicensePlate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ElevatorDisplayScreen.resx">
       <DependentUpon>ElevatorDisplayScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntranceLicensePlate.resx">
+      <DependentUpon>EntranceLicensePlate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExitLicensePlate.resx">
       <DependentUpon>ExitLicensePlate.cs</DependentUpon>
