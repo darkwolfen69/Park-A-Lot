@@ -12,9 +12,11 @@ namespace ParkALot
 {
     public partial class Marquee : Form
     {
+        static Marquee thisForm;
         public Marquee()
         {
             InitializeComponent();
+            thisForm = this;
         }
 
         private void Marquee_Load(object sender, EventArgs e)
@@ -27,7 +29,7 @@ namespace ParkALot
         {
             Parking.updateReserved();
             Parking.updateWalkin();
-            lb_marquee.Text = "There are " + Parking.WalkinCounter.ToString() + " spots available for Walkin,\nand "
+            thisForm.lb_marquee.Text = "There are " + Parking.WalkinCounter.ToString() + " spots available for Walkin,\nand "
             + Parking.ReservedCounter.ToString() + " spots available for registered customers with reservations.";
         }
     }

@@ -25,7 +25,7 @@ namespace ParkALot
             {
                 lb_Ticket.Text = Parking.nextWalkinAvailable.ToString();
                 Parking.walkin[Parking.nextWalkinAvailable - 1] = false;
-                Marquee.
+                Marquee.updateMarquee();
             }
             else
             {

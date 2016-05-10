@@ -115,9 +115,10 @@ namespace ParkALot
 
             using (SqlCommand getAllCustomers = connection.CreateCommand())
             {
-                getAllCustomers.CommandText = "SELECT dbo.Demographic.CustomerID, FirstName, LastName, dbo.Reservation.DayOfReservation, dbo.Reservation.TimeIn, dbo.Reservation.TimeOut from dbo.Demographic " + 
-                                              "JOIN dbo.Reservation ON (dbo.Demographic.CustomerID = dbo.Reservation.CustomerID) WHERE PlateNumber = '"
-                                               + licensePlateNumber + "';";
+                getAllCustomers.CommandText = "SELECT TOP 1 dbo.Demographic.CustomerID, FirstName, LastName, dbo.Reservation.DayOfReservation, "
+                                              + "dbo.Reservation.TimeIn, dbo.Reservation.TimeOut from dbo.Demographic "
+                                              + "JOIN dbo.Reservation ON (dbo.Demographic.CustomerID = dbo.Reservation.CustomerID) WHERE PlateNumber = '"
+                                               + licensePlateNumber + "' ORDER BY TimeIn DESC ;";
 
                 using (SqlDataReader reader = getAllCustomers.ExecuteReader())
                 {
@@ -133,6 +134,8 @@ namespace ParkALot
                     }
                 }
             }
+
+
 
             connection.Close();
         }
