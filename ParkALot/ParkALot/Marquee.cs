@@ -20,11 +20,13 @@ namespace ParkALot
         private void Marquee_Load(object sender, EventArgs e)
         {
             updateMarquee();
+            //EntranceDisplayScreen EDS = new EntranceDisplayScreen(this);
         }
 
-        public void updateMarquee()
+        public static void updateMarquee()
         {
             Parking.updateReserved();
+            Parking.updateWalkin();
             lb_marquee.Text = "There are " + Parking.WalkinCounter.ToString() + " spots available for Walkin,\nand "
             + Parking.ReservedCounter.ToString() + " spots available for registered customers with reservations.";
         }

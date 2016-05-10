@@ -148,3 +148,17 @@ E:\Park-A-Lot - Copy\ParkALot\ParkALot\obj\Debug\ParkALot.ExitLicensePlate.resou
 E:\Park-A-Lot - Copy\ParkALot\ParkALot\obj\Debug\ParkALot.Marquee.resources
 E:\Park-A-Lot - Copy\ParkALot\ParkALot\obj\Debug\ParkALot.Properties.Resources.resources
 E:\Park-A-Lot - Copy\ParkALot\ParkALot\obj\Debug\ParkALot.csproj.GenerateResource.Cache
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\bin\Debug\ParkALot.exe
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\bin\Debug\ParkALot.pdb
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.csprojResolveAssemblyReference.cache
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.ElevatorLicensePlate.resources
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.ElevatorReservationTime.resources
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.ElevatorReservedParking.resources
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.EntranceCustomerNumber.resources
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.EntranceDisplayScreen.resources
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.ElevatorDisplayScreen.resources
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.EntranceLicensePlate.resources
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.ExitLicensePlate.resources
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.Marquee.resources
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.Properties.Resources.resources
+C:\Users\programmer\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.csproj.GenerateResource.Cache

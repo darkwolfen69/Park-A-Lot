@@ -68,7 +68,7 @@ namespace ParkALot
                 DO.ReturnBasedOnLicensePlateNumber(Customer.LicensePlate);
                 DO.UpdateReservationWithParkingID(custNum);
                 Parking.updateReserved();
-                elevatorDisplayScreen.lb_Display.Text = Customer.FullName + "\n" + Parking.nextAvailable.ToString() + "\n" + Customer.TimeStart + " - " + Customer.TimeEnd;
+                elevatorDisplayScreen.lb_Display.Text = Customer.FullName + "\n" + Parking.nextResAvailable.ToString() + "\n" + Customer.TimeStart + " - " + Customer.TimeEnd;
                 this.Close();
             }
             else

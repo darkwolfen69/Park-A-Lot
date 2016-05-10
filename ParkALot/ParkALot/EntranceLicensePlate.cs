@@ -31,7 +31,6 @@ namespace ParkALot
             
             DataObject databaseConnection = new DataObject();
             ElevatorDisplayScreen eleDisplay = new ElevatorDisplayScreen();
-            EntranceDisplayScreen entDisplay = new EntranceDisplayScreen();
             EntranceCustomerNumber customerNumber = new EntranceCustomerNumber(entranceDisplayScreen, this);
             bool test = databaseConnection.DetermineIfCustomerExistsByLicense(tb_LPNum.Text);
             //bool test = false;

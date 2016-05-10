@@ -20,6 +20,17 @@ namespace ParkALot
 
         private void bn_walkin_Click(object sender, EventArgs e)
         {
+            Parking.updateWalkin();
+            if (Parking.nextWalkinAvailable != 0)
+            {
+                lb_Ticket.Text = Parking.nextWalkinAvailable.ToString();
+                Parking.walkin[Parking.nextWalkinAvailable - 1] = false;
+                Marquee.
+            }
+            else
+            {
+                lb_Ticket.Text = "There is no spaces available.\nPlease exit the garage.";
+            }
             bn_walkin.Hide();
             bn_ResCust.Hide();
             lb_WalkinWarning.Hide();

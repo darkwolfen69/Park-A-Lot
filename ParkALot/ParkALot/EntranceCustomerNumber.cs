@@ -75,7 +75,6 @@ namespace ParkALot
                 dbConnect.UpdateCustomerWithLicensePlate(custNumber, lpReader.tb_LPNum.Text);
                 elevator.Show();
                 Customer.LicensePlate = lpReader.tb_LPNum.Text;
-                this.Close();
             }
             else
             {
@@ -90,6 +89,7 @@ namespace ParkALot
                 displayScreen.lb_OptDetail.Text = "Please exit the garage!";
                 displayScreen.lb_OptDetail.Show();
             }
+            this.Close();
         }
     }
 }
