@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.Data.SqlClient;
 using System.Data.Sql;
+using System.Windows.Forms;
 
 namespace ParkALot
 {
@@ -22,7 +23,7 @@ namespace ParkALot
 
             using (SqlCommand getAllCustomers = connection.CreateCommand())
             {
-                getAllCustomers.CommandText = "select * from dbo.Demographic;";
+                getAllCustomers.CommandText = "select CustomerID from dbo.Demographic;";
 
                 using (SqlDataReader reader = getAllCustomers.ExecuteReader())
                 {
@@ -43,6 +44,7 @@ namespace ParkALot
                 if(customers[i] == customerNumber)
                 {
                     exists = true;
+                    break;
                 }
                 else
                 {
@@ -64,21 +66,21 @@ namespace ParkALot
 
             using (SqlCommand getAllCustomers = connection.CreateCommand())
             {
-                getAllCustomers.CommandText = "select * from dbo.Demographic;";
+                getAllCustomers.CommandText = "select PlateNumber from dbo.Demographic;";
 
                 using (SqlDataReader reader = getAllCustomers.ExecuteReader())
                 {
 
                     while (reader.Read())
                     {
-                        customers.Add(reader.GetInt32(0).ToString());
+                        customers.Add(reader.GetString(0));
                     }
                 }
             }
 
             connection.Close();
 
-            bool exists = false;
+            bool exists = true;
 
 
             //issue with string vs int on this licenseNumber. i did this so i could run the program past it...
@@ -91,6 +93,7 @@ namespace ParkALot
                 if (customers[i] == licenseNumber)
                 {
                     exists = true;
+                    break;
                 }
                 else
                 {
@@ -112,8 +115,9 @@ namespace ParkALot
 
             using (SqlCommand getAllCustomers = connection.CreateCommand())
             {
-                getAllCustomers.CommandText = "select CustomerID, FirstName, LastName, DayOfReservation, TimeIn, TimeOut from dbo.Demographic JOIN dbo.Reservation WHERE PlateNumber = "
-                                               + licensePlateNumber + " AND dbo.Demographic.CustomerID = dbo.Reservation.CustomerID;";
+                getAllCustomers.CommandText = "SELECT dbo.Demographic.CustomerID, FirstName, LastName, dbo.Reservation.DayOfReservation, dbo.Reservation.TimeIn, dbo.Reservation.TimeOut from dbo.Demographic " + 
+                                              "JOIN dbo.Reservation ON (dbo.Demographic.CustomerID = dbo.Reservation.CustomerID) WHERE PlateNumber = '"
+                                               + licensePlateNumber + "';";
 
                 using (SqlDataReader reader = getAllCustomers.ExecuteReader())
                 {
@@ -123,9 +127,9 @@ namespace ParkALot
                         Customer.CustNum = reader.GetInt32(0).ToString();
                         Customer.FullName = reader.GetString(1);
                         Customer.FullName += " " + reader.GetString(2);
-                        Customer.Date = reader.GetSqlDateTime(3).ToString();
-                        Customer.TimeStart = reader.GetSqlDateTime(4).ToString();
-                        Customer.TimeEnd = reader.GetSqlDateTime(5).ToString();
+                        Customer.Date = reader.GetDateTime(3);
+                        Customer.TimeStart = reader.GetDateTime(4);
+                        Customer.TimeEnd = reader.GetDateTime(5);
                     }
                 }
             }
@@ -133,19 +137,23 @@ namespace ParkALot
             connection.Close();
         }
 
-        public void InsertNewReservation(int customerNumber, string licensePlateNumber, int dayOfReservation,
-                                         int timeIn, int timeOut)
+        public void InsertNewReservation(int customerNumber, string licensePlateNumber, DateTime dayOfReservation,
+                                         DateTime timeIn, DateTime timeOut)
         {
+            //DateTime time = DateTime.Now;              // Use current time
+            string format = "yyyy-MM-dd HH:mm:ss";    // modify the format depending upon input required in the column in database 
+            //string insert = @" insert into Table(DateTime Column) values ('" + time.ToString(format) + "')";
+
             SqlConnection connection = new SqlConnection();
 
             connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
             connection.Open();
 
-            using(SqlCommand insertReservation = new SqlCommand())
+            using(SqlCommand insertReservation = connection.CreateCommand())
             {
-                insertReservation.CommandText = "insert into dbo.Reservation values (" + customerNumber + 
-                                                 licensePlateNumber + dayOfReservation + timeIn + timeOut + 
-                                                 ");";
+                insertReservation.CommandText = @" insert into dbo.Reservation (CustomerID, DayOfReservation, TimeIn, TimeOut) values (" + customerNumber + ", '" 
+                                                + dayOfReservation.Month + "-" + dayOfReservation.Day + "-" + dayOfReservation.Year + "', '" 
+                                                + DateTime.Now.ToString(format) + "', '" + timeOut.ToString(format) + "');";
                 insertReservation.ExecuteNonQuery();   
             }
 
@@ -154,18 +162,42 @@ namespace ParkALot
 
         public void UpdateCustomerWithLicensePlate(int customerNumber, string licenseNumber)
         {
+
             SqlConnection connection = new SqlConnection();
 
             connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
             connection.Open();
 
-            using (SqlCommand updateCustomer = new SqlCommand())
+            using (SqlCommand updateCustomer = connection.CreateCommand())
             {
-                updateCustomer.CommandText = "UPDATE dbo.Demographic SET PlateNumber ='" + licenseNumber + "' WHERE CustomerID =" + customerNumber + ";";
+                updateCustomer.CommandText = "UPDATE dbo.Demographic SET PlateNumber = '" + licenseNumber + "' WHERE CustomerID = " + customerNumber + ";";
                 updateCustomer.ExecuteNonQuery();
             }
 
             connection.Close();
+        }
+
+        public int CheckNextAvailable()
+        {
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
+            connection.Open();
+
+            int parkingID = 0;
+
+            using(SqlCommand getParkingID = connection.CreateCommand())
+            {
+                getParkingID.CommandText = "SELECT TOP 1 ParkingSpaceID FROM dbo.Parking WHERE IsAvailable = 'True';";
+
+                using(SqlDataReader reader = getParkingID.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        parkingID = reader.GetInt32(0);
+                    }
+                }
+            }
+            return parkingID;
         }
 
         public void UpdateReservationWithParkingID(int customerNumber)
@@ -178,7 +210,7 @@ namespace ParkALot
 
             using(SqlCommand getParkingID = connection.CreateCommand())
             {
-                getParkingID.CommandText = "SELECT TOP 1 ParkingSpaceID FROM dbo.Parking WHERE IsAvailable = True;";
+                getParkingID.CommandText = "SELECT TOP 1 ParkingSpaceID FROM dbo.Parking WHERE IsAvailable = 'True';";
 
                 using(SqlDataReader reader = getParkingID.ExecuteReader())
                 {
@@ -189,13 +221,13 @@ namespace ParkALot
                 }
             }
 
-            using(SqlCommand updateReservation = new SqlCommand())
+            using(SqlCommand updateReservation = connection.CreateCommand())
             {
                 updateReservation.CommandText = "UPDATE dbo.Reservation SET ParkingSpaceID =" +
                                                  parkingID + " WHERE CustomerID =" + customerNumber + ";";
                 updateReservation.ExecuteNonQuery();
 
-                updateReservation.CommandText = "UPDATE dbo.Parking SET IsAvailable= False WHERE ParkingSpaceID =" + parkingID + ";";
+                updateReservation.CommandText = "UPDATE dbo.Parking SET IsAvailable= 'False' WHERE ParkingSpaceID =" + parkingID + ";";
                 updateReservation.ExecuteNonQuery();
             }
 
@@ -209,9 +241,9 @@ namespace ParkALot
             connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
             connection.Open();
             int parkingCounter = 0;
-            using(SqlCommand getAvailableParkingSpots = new SqlCommand())
+            using(SqlCommand getAvailableParkingSpots = connection.CreateCommand())
             {
-                getAvailableParkingSpots.CommandText = "SELECT * FROM dbo.Parking WHERE IsAvailable = True;";
+                getAvailableParkingSpots.CommandText = "SELECT * FROM dbo.Parking WHERE IsAvailable = 'True';";
                 using(SqlDataReader reader = getAvailableParkingSpots.ExecuteReader())
                 {
                     while(reader.Read())

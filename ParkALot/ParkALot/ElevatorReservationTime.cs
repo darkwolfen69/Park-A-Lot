@@ -59,25 +59,22 @@ namespace ParkALot
         {
             DataObject DO = new DataObject();
 
-            int cusNum = 0;
-            int timeStart = 0;
-            int timeEnd = 0;
-            int day = 0;
-            int.TryParse(Customer.CustNum, out cusNum);
-            int.TryParse(Customer.TimeStart, out timeStart);
-            int.TryParse(Customer.TimeEnd, out timeEnd);
-            int.TryParse(Customer.Date, out day);
-            
+            DateTime timeEnd = DateTime.Parse(textBox2.Text);
+            int custNum = int.Parse(Customer.CustNum);
 
-            if ()
+            if (Parking.ReservedCounter < 50)
             {
-                DO.InsertNewReservation(cusNum,Customer.LicensePlate, day,timeStart,timeEnd);
-                elevatorDisplayScreen.lb_Display.Text = Customer.FullName + "\n" + "Parking Spot /n" + Customer.TimeStart + " - " + Customer.TimeEnd;
+                DO.InsertNewReservation(custNum,Customer.LicensePlate, DateTime.Now.Date,DateTime.Now,timeEnd);
+                DO.ReturnBasedOnLicensePlateNumber(Customer.LicensePlate);
+                DO.UpdateReservationWithParkingID(custNum);
+                Parking.updateReserved();
+                elevatorDisplayScreen.lb_Display.Text = Customer.FullName + "\n" + Parking.nextAvailable.ToString() + "\n" + Customer.TimeStart + " - " + Customer.TimeEnd;
+                this.Close();
             }
             else
             {
                 this.Close();
-                elevatorDisplayScreen.lb_Display.Text = "No reservations for that time.\nPlease exit the garage.";
+                elevatorDisplayScreen.lb_Display.Text = "No reservations available at this time.\nPlease exit the garage.";
             }
             
             

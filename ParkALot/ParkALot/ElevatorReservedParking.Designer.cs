@@ -84,7 +84,9 @@
             this.Controls.Add(this.bn_No);
             this.Controls.Add(this.bn_Yes);
             this.Controls.Add(this.lb_Reservation);
+            this.Location = new System.Drawing.Point(906, 440);
             this.Name = "ElevatorReservedParking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Park-A-Lot: Elevator";
             this.ResumeLayout(false);
             this.PerformLayout();

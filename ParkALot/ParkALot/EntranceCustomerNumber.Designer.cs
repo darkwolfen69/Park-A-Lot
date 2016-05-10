@@ -68,7 +68,7 @@
             this.button11.TabIndex = 36;
             this.button11.Text = "Ok";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click_1);
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -178,7 +178,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Location = new System.Drawing.Point(906, 440);
             this.Name = "EntranceCustomerNumber";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Park-A-Lot";
             this.ResumeLayout(false);
             this.PerformLayout();

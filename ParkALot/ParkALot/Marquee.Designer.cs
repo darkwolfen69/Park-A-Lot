@@ -37,7 +37,7 @@
             this.lb_marquee.Font = new System.Drawing.Font("Comic Sans MS", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_marquee.Location = new System.Drawing.Point(75, 49);
             this.lb_marquee.Name = "lb_marquee";
-            this.lb_marquee.Size = new System.Drawing.Size(1137, 96);
+            this.lb_marquee.Size = new System.Drawing.Size(1091, 90);
             this.lb_marquee.TabIndex = 6;
             this.lb_marquee.Text = "There are 10 spots available for Walkin, \r\nand 50 spots available for registered " +
     "customers with reservations.";
@@ -49,8 +49,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1287, 195);
             this.Controls.Add(this.lb_marquee);
+            this.Location = new System.Drawing.Point(10, 10);
             this.Name = "Marquee";
-            this.Text = "Marquee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Park-A-Lot: Marquee";
             this.Load += new System.EventHandler(this.Marquee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

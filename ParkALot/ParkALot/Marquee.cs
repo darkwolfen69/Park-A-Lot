@@ -24,10 +24,9 @@ namespace ParkALot
 
         public void updateMarquee()
         {
-            Parking counter = new Parking();
-            
-            lb_marquee.Text = "There are " + counter.WalkinCounter.ToString() + " spots available for Walkin,\nand "
-            + counter.ReservedCounter.ToString() + " spots available for registered customers with reservations.";
+            Parking.updateReserved();
+            lb_marquee.Text = "There are " + Parking.WalkinCounter.ToString() + " spots available for Walkin,\nand "
+            + Parking.ReservedCounter.ToString() + " spots available for registered customers with reservations.";
         }
     }
 }

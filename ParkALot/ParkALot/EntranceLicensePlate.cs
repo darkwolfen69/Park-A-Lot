@@ -12,8 +12,17 @@ namespace ParkALot
 {
     public partial class EntranceLicensePlate : Form
     {
+        private EntranceDisplayScreen entranceDisplayScreen;
+
         public EntranceLicensePlate()
         {
+            InitializeComponent();
+        }
+
+        public EntranceLicensePlate(EntranceDisplayScreen entranceDisplayScreen)
+        {
+            // TODO: Complete member initialization
+            this.entranceDisplayScreen = entranceDisplayScreen;
             InitializeComponent();
         }
 
@@ -22,15 +31,21 @@ namespace ParkALot
             
             DataObject databaseConnection = new DataObject();
             ElevatorDisplayScreen eleDisplay = new ElevatorDisplayScreen();
-            EntranceCustomerNumber customerNumber = new EntranceCustomerNumber();
-            if (databaseConnection.DetermineIfCustomerExistsByLicense(tb_LPNum.Text) == true)
+            EntranceDisplayScreen entDisplay = new EntranceDisplayScreen();
+            EntranceCustomerNumber customerNumber = new EntranceCustomerNumber(entranceDisplayScreen, this);
+            bool test = databaseConnection.DetermineIfCustomerExistsByLicense(tb_LPNum.Text);
+            //bool test = false;
+            if (test)
             {
-                MessageBox.Show("Please pull to the elevator!");
+                Customer.LicensePlate = tb_LPNum.Text;
+                entranceDisplayScreen.lb_WalkinHeader.Text = "Please pull to the elevator!";
+                this.Close();
                 eleDisplay.Show();
             }
             else
             {
                 customerNumber.Show();
+                this.Hide();
             }
         }
     }

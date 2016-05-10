@@ -34,30 +34,28 @@ namespace ParkALot
             //EntranceCustomerNumber newResCustomer = new EntranceCustomerNumber(elevatorDisplayScreen);
             //newResCustomer.Show();
             //elevatorDisplayScreen.lb_Display.Text = "License plate not found.  Please enter your Customer Number.";
+
             DataObject dataObject = new DataObject();
-
-
-            if (dataObject.DetermineIfCustomerExistsByLicense(tb_LPNum.Text) == true)
+            dataObject.ReturnBasedOnLicensePlateNumber(tb_LPNum.Text);
+            string today = DateTime.Now.ToString();
+            
+            if (dataObject.DetermineIfCustomerExistsByLicense(tb_LPNum.Text))
             {
-                if (Customer.Date != null) //determine if there is a reservation
+                if (Customer.TimeStart.AddMinutes(-10) > DateTime.Now && Customer.TimeEnd < DateTime.Now) //determine if there is a reservation
                 {
-                    dataObject.ReturnBasedOnLicensePlateNumber(tb_LPNum.Text);
-                    //ElevatorReservedParking ERP = new ElevatorReservedParking(elevatorDisplayScreen);
-                    //ERP.Show();
-                    ElevatorDisplayScreen EDS = new ElevatorDisplayScreen();
-                    EDS.lb_Display.Text = Customer.FullName + "\n" + "Parking Spot /n" + Customer.TimeStart + " - " + Customer.TimeEnd;
-
-
+                    elevatorDisplayScreen.lb_Display.Text = Customer.FullName + "\n" + "Parking Spot \n" + Customer.TimeStart + " - " + Customer.TimeEnd;
+                }
+                else
+                {
+                    elevatorDisplayScreen.lb_Display.Text = "You do not have a reservation at this time.\nWould you like to make a reservation?";
+                    ElevatorReservedParking question = new ElevatorReservedParking(elevatorDisplayScreen);
+                    question.Show();
                 }
             }
             else
             {
-                ElevatorReservationTime ERT = new ElevatorReservationTime(elevatorDisplayScreen);
-                ERT.Show();
-
+                elevatorDisplayScreen.lb_Display.Text = "You are not a registered customer.\nPlease exit the garage.";
             }
-
-
             this.Close();
         }
     }

@@ -10,9 +10,9 @@ namespace ParkALot
     {
         public static string FullName { get; set; }
         public static string CustNum { get; set; }
-        public static string Date { get; set; }
-        public static string TimeStart { get; set; }
-        public static string TimeEnd { get; set; }
+        public static DateTime Date { get; set; }
+        public static DateTime TimeStart { get; set; }
+        public static DateTime TimeEnd { get; set; }
         public static string LicensePlate { get; set; }
     }
 }

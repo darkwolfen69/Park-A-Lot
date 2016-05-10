@@ -28,22 +28,11 @@ namespace ParkALot
             lb_ParkingInstructions.Show();
             lb_WalkinHeader.Show();
             lb_Ticket.Show();
-            System.Timers.Timer myTimer = new System.Timers.Timer();
-            myTimer.Elapsed += myTimer_Elapsed;
-            myTimer.Interval = 5000;
-            myTimer.Start();
-        }
-
-        public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            System.Timers.Timer myTimer = (System.Timers.Timer)sender;
-            myTimer.Stop();
-            //Application.Restart();
         }
 
         private void bn_ResCust_Click(object sender, EventArgs e)
         {   
-            EntranceLicensePlate ELP = new EntranceLicensePlate();
+            EntranceLicensePlate ELP = new EntranceLicensePlate(this);
             
             ELP.Show();
             lb_WalkinWarning.Hide();
@@ -60,6 +49,26 @@ namespace ParkALot
         {
             Marquee newMarquee = new Marquee();
             newMarquee.Show();
+            ExitLicensePlate exit = new ExitLicensePlate();
+            exit.Show();
+        }
+
+        private void lb_WalkinHeader_TextChanged(object sender, EventArgs e)
+        {
+
+            System.Timers.Timer myTimer = new System.Timers.Timer();
+            myTimer.Elapsed += myTimer_Elapsed;
+            myTimer.Interval = 5000;
+            myTimer.Start();
+        }
+
+
+
+        public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            System.Timers.Timer myTimer = (System.Timers.Timer)sender;
+            myTimer.Stop();
+            //this.Hide();  //throws a Threading exception.
         }
     }
 }

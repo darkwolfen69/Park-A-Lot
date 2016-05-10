@@ -82,8 +82,10 @@
             this.Controls.Add(this.bn_LPRead);
             this.Controls.Add(this.tb_LPNum);
             this.Controls.Add(this.label1);
+            this.Location = new System.Drawing.Point(906, 250);
             this.Name = "ExitLicensePlate";
-            this.Text = "Park-A-Lot";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Park-A-Lot: Exit Reader";
             this.ResumeLayout(false);
             this.PerformLayout();
 

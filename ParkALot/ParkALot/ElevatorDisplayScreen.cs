@@ -20,6 +20,7 @@ namespace ParkALot
         private void bn_PullForward_Click(object sender, EventArgs e)
         {
             ElevatorLicensePlate newVehicle = new ElevatorLicensePlate(this);
+            bn_PullForward.Hide();
             newVehicle.Show();
         }
     }

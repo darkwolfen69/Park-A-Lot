@@ -13,6 +13,7 @@ namespace ParkALot
     public partial class EntranceCustomerNumber : Form
     {
         private EntranceDisplayScreen displayScreen;
+        private EntranceLicensePlate lpReader;
 
         public EntranceCustomerNumber()
         {
@@ -29,11 +30,22 @@ namespace ParkALot
             button10.Click += GenerateNumber;
         }
 
-        public EntranceCustomerNumber(EntranceDisplayScreen displayScreen)
+        public EntranceCustomerNumber(EntranceDisplayScreen displayScreen, EntranceLicensePlate lpReader)
         {
             // TODO: Complete member initialization
             this.displayScreen = displayScreen;
+            this.lpReader = lpReader;
             InitializeComponent();
+            button1.Click += GenerateNumber;
+            button2.Click += GenerateNumber;
+            button3.Click += GenerateNumber;
+            button4.Click += GenerateNumber;
+            button5.Click += GenerateNumber;
+            button6.Click += GenerateNumber;
+            button7.Click += GenerateNumber;
+            button8.Click += GenerateNumber;
+            button9.Click += GenerateNumber;
+            button10.Click += GenerateNumber;
         }
 
         public void GenerateNumber(object sender, EventArgs e)
@@ -44,23 +56,40 @@ namespace ParkALot
 
         private void button11_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void button11_Click_1(object sender, EventArgs e)
-        {
             Customer.CustNum = customerNumber.Text;
-
-            displayScreen.lb_WalkinWarning.Hide();
-            displayScreen.lb_ResCusWarning.Hide();
-            displayScreen.bn_ResCust.Hide();
-            displayScreen.bn_walkin.Hide();
-            displayScreen.lb_Ticket.Show();
-            displayScreen.lb_Ticket.Text = "Thank you!";
-            displayScreen.lb_Ticket.Font = new System.Drawing.Font("Comic Sans MS", 12);
-            displayScreen.lb_OptDetail.Location = new Point(255, 409);
-            displayScreen.lb_OptDetail.Text = "Please pull towards the elevator!";
-            this.Close();
+            DataObject dbConnect = new DataObject();
+            ElevatorDisplayScreen elevator = new ElevatorDisplayScreen();
+            int custNumber = int.Parse(customerNumber.Text);
+            if (dbConnect.DetermineIfCustomerExists(custNumber))
+            {
+                displayScreen.lb_WalkinWarning.Hide();
+                displayScreen.lb_ResCusWarning.Hide();
+                displayScreen.bn_ResCust.Hide();
+                displayScreen.bn_walkin.Hide();
+                displayScreen.lb_Ticket.Show();
+                displayScreen.lb_Ticket.Text = "Thank you!";
+                displayScreen.lb_Ticket.Font = new System.Drawing.Font("Comic Sans MS", 12);
+                displayScreen.lb_OptDetail.Location = new Point(255, 255);
+                displayScreen.lb_OptDetail.Text = "Please pull towards the elevator!";
+                displayScreen.lb_OptDetail.Show();
+                dbConnect.UpdateCustomerWithLicensePlate(custNumber, lpReader.tb_LPNum.Text);
+                elevator.Show();
+                Customer.LicensePlate = lpReader.tb_LPNum.Text;
+                this.Close();
+            }
+            else
+            {
+                displayScreen.lb_WalkinWarning.Hide();
+                displayScreen.lb_ResCusWarning.Hide();
+                displayScreen.bn_ResCust.Hide();
+                displayScreen.bn_walkin.Hide();
+                displayScreen.lb_Ticket.Show();
+                displayScreen.lb_Ticket.Text = "You are not a registered customer!";
+                displayScreen.lb_Ticket.Font = new System.Drawing.Font("Comic Sans MS", 12);
+                displayScreen.lb_OptDetail.Location = new Point(255, 255);
+                displayScreen.lb_OptDetail.Text = "Please exit the garage!";
+                displayScreen.lb_OptDetail.Show();
+            }
         }
     }
 }

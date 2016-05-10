@@ -105,7 +105,9 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_TimeInstruction);
+            this.Location = new System.Drawing.Point(906, 440);
             this.Name = "ElevatorReservationTime";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Park-A-Lot: Elevator";
             this.Load += new System.EventHandler(this.ElevatorReservationTime_Load);
             this.ResumeLayout(false);

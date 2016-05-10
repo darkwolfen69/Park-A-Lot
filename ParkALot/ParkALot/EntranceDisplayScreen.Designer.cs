@@ -116,6 +116,7 @@
             this.lb_WalkinHeader.TabIndex = 6;
             this.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!";
             this.lb_WalkinHeader.Visible = false;
+            this.lb_WalkinHeader.TextChanged += new System.EventHandler(this.lb_WalkinHeader_TextChanged);
             // 
             // lb_Ticket
             // 
@@ -165,8 +166,10 @@
             this.Controls.Add(this.bn_ResCust);
             this.Controls.Add(this.bn_walkin);
             this.Controls.Add(this.lb_header);
+            this.Location = new System.Drawing.Point(10, 250);
             this.Name = "EntranceDisplayScreen";
-            this.Text = "Park-A-Lot";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Park-A-Lot: Entrance";
             this.Load += new System.EventHandler(this.EntranceDisplayScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
