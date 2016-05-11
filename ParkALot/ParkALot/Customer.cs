@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ParkALot
 {
     class Customer
@@ -15,9 +16,9 @@ namespace ParkALot
         public static DateTime TimeEnd { get; set; }
         public static string LicensePlate { get; set; }
 
-        public void ContinuumTransfunctioner()
-        {
 
+        public static void ContinuumTransfunctioner()
+        {
         }
     }
 }

@@ -30,7 +30,9 @@ namespace ParkALot
         private void bn_No_Click(object sender, EventArgs e)
         {
             elevatorDisplayScreen.lb_Display.Text = "Please, exit the parking garage.";
-            this.Close(); System.Timers.Timer myTimer = new System.Timers.Timer();
+            this.Close(); 
+            //  This is a timer...does it work? mm
+            System.Timers.Timer myTimer = new System.Timers.Timer();
             myTimer.Elapsed += myTimer_Elapsed;
             myTimer.Interval = 5000;
             myTimer.Start();

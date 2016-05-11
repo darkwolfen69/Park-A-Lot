@@ -69,7 +69,7 @@ namespace ParkALot
                 displayScreen.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot.\n\nPlease pull forward.";
                 //displayScreen.lb_Ticket.Show();
                 displayScreen.lb_Ticket.Text = "Thank you!";
-                displayScreen.lb_Ticket.Font = new System.Drawing.Font("Comic Sans MS", 12);
+                displayScreen.lb_Ticket.Font = new System.Drawing.Font("Cambria", 12);
                 displayScreen.lb_OptDetail.Location = new Point(255, 255);
                 displayScreen.lb_OptDetail.Text = "Please pull towards the elevator!";
                 //displayScreen.lb_OptDetail.Show();
@@ -85,12 +85,17 @@ namespace ParkALot
                 displayScreen.bn_walkin.Hide();
                 displayScreen.lb_Ticket.Show();
                 displayScreen.lb_Ticket.Text = "You are not a registered customer!";
-                displayScreen.lb_Ticket.Font = new System.Drawing.Font("Comic Sans MS", 12);
+                displayScreen.lb_Ticket.Font = new System.Drawing.Font("Cambria", 12);
                 displayScreen.lb_OptDetail.Location = new Point(255, 255);
                 displayScreen.lb_OptDetail.Text = "Please exit the garage!";
                 displayScreen.lb_OptDetail.Show();
             }
             this.Close();
+        }
+        //  Clears customer number text box
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            txbx_cusNum.Clear();
         }
     }
 }
