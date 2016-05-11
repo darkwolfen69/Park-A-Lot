@@ -37,10 +37,11 @@
             // lb_header
             // 
             this.lb_header.AutoSize = true;
-            this.lb_header.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_header.Location = new System.Drawing.Point(225, 10);
+            this.lb_header.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_header.Location = new System.Drawing.Point(169, 8);
+            this.lb_header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_header.Name = "lb_header";
-            this.lb_header.Size = new System.Drawing.Size(426, 48);
+            this.lb_header.Size = new System.Drawing.Size(304, 32);
             this.lb_header.TabIndex = 1;
             this.lb_header.Text = "Welcome to Park-A-Lot!";
             this.lb_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -48,19 +49,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(744, 427);
+            this.label2.Location = new System.Drawing.Point(558, 347);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 17);
+            this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 40;
             this.label2.Text = "Park-A-Lot © 2016";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bn_PullForward
             // 
-            this.bn_PullForward.Location = new System.Drawing.Point(355, 394);
-            this.bn_PullForward.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bn_PullForward.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bn_PullForward.Location = new System.Drawing.Point(266, 320);
+            this.bn_PullForward.Margin = new System.Windows.Forms.Padding(2);
             this.bn_PullForward.Name = "bn_PullForward";
-            this.bn_PullForward.Size = new System.Drawing.Size(175, 50);
+            this.bn_PullForward.Size = new System.Drawing.Size(131, 41);
             this.bn_PullForward.TabIndex = 41;
             this.bn_PullForward.Text = "Please, pull forward.";
             this.bn_PullForward.UseVisualStyleBackColor = true;
@@ -69,27 +72,28 @@
             // lb_Display
             // 
             this.lb_Display.AutoSize = true;
-            this.lb_Display.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Display.Location = new System.Drawing.Point(127, 178);
+            this.lb_Display.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Display.Location = new System.Drawing.Point(95, 145);
+            this.lb_Display.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_Display.Name = "lb_Display";
-            this.lb_Display.Size = new System.Drawing.Size(647, 33);
+            this.lb_Display.Size = new System.Drawing.Size(466, 22);
             this.lb_Display.TabIndex = 42;
             this.lb_Display.Text = "Reading license plate.  Please, keep your vehicle stopped.";
             // 
             // ElevatorDisplayScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 453);
+            this.ClientSize = new System.Drawing.Size(662, 368);
             this.Controls.Add(this.lb_Display);
             this.Controls.Add(this.bn_PullForward);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lb_header);
             this.Location = new System.Drawing.Point(10, 250);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ElevatorDisplayScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Park-A-Lot: Elevator";
+            this.Text = "x";
             this.ResumeLayout(false);
             this.PerformLayout();
 

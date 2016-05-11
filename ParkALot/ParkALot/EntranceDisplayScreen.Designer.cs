@@ -45,74 +45,85 @@
             // lb_header
             // 
             this.lb_header.AutoSize = true;
-            this.lb_header.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_header.Location = new System.Drawing.Point(225, 10);
+            this.lb_header.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_header.Location = new System.Drawing.Point(169, 8);
+            this.lb_header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_header.Name = "lb_header";
-            this.lb_header.Size = new System.Drawing.Size(426, 48);
+            this.lb_header.Size = new System.Drawing.Size(304, 32);
             this.lb_header.TabIndex = 0;
             this.lb_header.Text = "Welcome to Park-A-Lot!";
             this.lb_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bn_walkin
             // 
-            this.bn_walkin.Location = new System.Drawing.Point(112, 123);
+            this.bn_walkin.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bn_walkin.Location = new System.Drawing.Point(84, 100);
+            this.bn_walkin.Margin = new System.Windows.Forms.Padding(2);
             this.bn_walkin.Name = "bn_walkin";
-            this.bn_walkin.Size = new System.Drawing.Size(275, 125);
+            this.bn_walkin.Size = new System.Drawing.Size(206, 102);
             this.bn_walkin.TabIndex = 1;
-            this.bn_walkin.Text = "Walk-In";
+            this.bn_walkin.Text = "Drive-In";
             this.bn_walkin.UseVisualStyleBackColor = true;
             this.bn_walkin.Click += new System.EventHandler(this.bn_walkin_Click);
             // 
             // bn_ResCust
             // 
-            this.bn_ResCust.Location = new System.Drawing.Point(495, 123);
+            this.bn_ResCust.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bn_ResCust.Location = new System.Drawing.Point(371, 100);
+            this.bn_ResCust.Margin = new System.Windows.Forms.Padding(2);
             this.bn_ResCust.Name = "bn_ResCust";
-            this.bn_ResCust.Size = new System.Drawing.Size(275, 125);
+            this.bn_ResCust.Size = new System.Drawing.Size(206, 102);
             this.bn_ResCust.TabIndex = 2;
-            this.bn_ResCust.Text = "Reserved Customer";
+            this.bn_ResCust.Text = "Reservation";
             this.bn_ResCust.UseVisualStyleBackColor = true;
             this.bn_ResCust.Click += new System.EventHandler(this.bn_ResCust_Click);
             // 
             // lb_WalkinWarning
             // 
             this.lb_WalkinWarning.AutoSize = true;
-            this.lb_WalkinWarning.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_WalkinWarning.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_WalkinWarning.ForeColor = System.Drawing.Color.Red;
-            this.lb_WalkinWarning.Location = new System.Drawing.Point(108, 251);
+            this.lb_WalkinWarning.Location = new System.Drawing.Point(71, 205);
+            this.lb_WalkinWarning.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_WalkinWarning.Name = "lb_WalkinWarning";
-            this.lb_WalkinWarning.Size = new System.Drawing.Size(303, 48);
+            this.lb_WalkinWarning.Size = new System.Drawing.Size(232, 34);
             this.lb_WalkinWarning.TabIndex = 3;
-            this.lb_WalkinWarning.Text = "Walk-In customers will only be \r\nallowed to park on the ground floor.";
+            this.lb_WalkinWarning.Text = "Drive-In customers are only \r\nallowed to park on the ground floor.";
+            this.lb_WalkinWarning.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lb_ResCusWarning
             // 
             this.lb_ResCusWarning.AutoSize = true;
-            this.lb_ResCusWarning.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ResCusWarning.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ResCusWarning.ForeColor = System.Drawing.Color.Red;
-            this.lb_ResCusWarning.Location = new System.Drawing.Point(491, 251);
+            this.lb_ResCusWarning.Location = new System.Drawing.Point(358, 204);
+            this.lb_ResCusWarning.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_ResCusWarning.Name = "lb_ResCusWarning";
-            this.lb_ResCusWarning.Size = new System.Drawing.Size(330, 48);
+            this.lb_ResCusWarning.Size = new System.Drawing.Size(235, 34);
             this.lb_ResCusWarning.TabIndex = 4;
-            this.lb_ResCusWarning.Text = "Reserved customers will be allowed \r\nto park in the spots they have reserved.";
+            this.lb_ResCusWarning.Text = "Customers with reservations will be \r\nallowed to park on the upper levels.";
+            this.lb_ResCusWarning.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lb_OptDetail
             // 
             this.lb_OptDetail.AutoSize = true;
-            this.lb_OptDetail.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.lb_OptDetail.Font = new System.Drawing.Font("Cambria", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_OptDetail.Location = new System.Drawing.Point(218, 409);
+            this.lb_OptDetail.Location = new System.Drawing.Point(164, 332);
+            this.lb_OptDetail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_OptDetail.Name = "lb_OptDetail";
-            this.lb_OptDetail.Size = new System.Drawing.Size(453, 29);
+            this.lb_OptDetail.Size = new System.Drawing.Size(331, 19);
             this.lb_OptDetail.TabIndex = 5;
             this.lb_OptDetail.Text = "Please choose the option that applies to you!";
             // 
             // lb_WalkinHeader
             // 
             this.lb_WalkinHeader.AutoSize = true;
-            this.lb_WalkinHeader.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_WalkinHeader.Location = new System.Drawing.Point(236, 97);
+            this.lb_WalkinHeader.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_WalkinHeader.Location = new System.Drawing.Point(180, 76);
+            this.lb_WalkinHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_WalkinHeader.Name = "lb_WalkinHeader";
-            this.lb_WalkinHeader.Size = new System.Drawing.Size(399, 35);
+            this.lb_WalkinHeader.Size = new System.Drawing.Size(284, 22);
             this.lb_WalkinHeader.TabIndex = 6;
             this.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!";
             this.lb_WalkinHeader.Visible = false;
@@ -121,11 +132,12 @@
             // lb_Ticket
             // 
             this.lb_Ticket.AutoSize = true;
-            this.lb_Ticket.Font = new System.Drawing.Font("Comic Sans MS", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Ticket.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Ticket.ForeColor = System.Drawing.Color.Red;
-            this.lb_Ticket.Location = new System.Drawing.Point(359, 164);
+            this.lb_Ticket.Location = new System.Drawing.Point(283, 132);
+            this.lb_Ticket.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_Ticket.Name = "lb_Ticket";
-            this.lb_Ticket.Size = new System.Drawing.Size(146, 84);
+            this.lb_Ticket.Size = new System.Drawing.Size(73, 57);
             this.lb_Ticket.TabIndex = 7;
             this.lb_Ticket.Text = "---";
             this.lb_Ticket.Visible = false;
@@ -133,9 +145,11 @@
             // lb_ParkingInstructions
             // 
             this.lb_ParkingInstructions.AutoSize = true;
-            this.lb_ParkingInstructions.Location = new System.Drawing.Point(290, 299);
+            this.lb_ParkingInstructions.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ParkingInstructions.Location = new System.Drawing.Point(200, 253);
+            this.lb_ParkingInstructions.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_ParkingInstructions.Name = "lb_ParkingInstructions";
-            this.lb_ParkingInstructions.Size = new System.Drawing.Size(267, 34);
+            this.lb_ParkingInstructions.Size = new System.Drawing.Size(261, 34);
             this.lb_ParkingInstructions.TabIndex = 8;
             this.lb_ParkingInstructions.Text = "Please pull to the parking spot displayed \r\nabove and on your parking ticket.";
             this.lb_ParkingInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -144,18 +158,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(744, 427);
+            this.label1.Location = new System.Drawing.Point(558, 347);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 17);
+            this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 39;
             this.label1.Text = "Park-A-Lot © 2016";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EntranceDisplayScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 453);
+            this.ClientSize = new System.Drawing.Size(662, 368);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_ParkingInstructions);
             this.Controls.Add(this.lb_Ticket);
@@ -167,6 +182,7 @@
             this.Controls.Add(this.bn_walkin);
             this.Controls.Add(this.lb_header);
             this.Location = new System.Drawing.Point(10, 250);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EntranceDisplayScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Park-A-Lot: Entrance";

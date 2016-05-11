@@ -14,5 +14,10 @@ namespace ParkALot
         public static DateTime TimeStart { get; set; }
         public static DateTime TimeEnd { get; set; }
         public static string LicensePlate { get; set; }
+
+        public void ContinuumTransfunctioner()
+        {
+
+        }
     }
 }

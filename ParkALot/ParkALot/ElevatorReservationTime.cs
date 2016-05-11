@@ -37,22 +37,24 @@ namespace ParkALot
             {
                 timeHour -= 12;
 
-                lb_Now.Text = timeHour + ":" + timeMin + " PM";
+                lb_Now.Text = timeHour + ":" + timeMin.ToString() + " PM";
             }
             else if (timeHour == 0)
             {
                 timeHour = 12;
 
-                lb_Now.Text = timeHour + ":" + timeMin + " AM";
+                lb_Now.Text = timeHour + ":" + timeMin.ToString() + " AM";
             }
             else if (timeHour == 12)
             {
-                lb_Now.Text = timeHour + ":" + timeMin + " PM";
+                lb_Now.Text = timeHour + ":" + timeMin.ToString() + " PM";
             }
             else
             {
-                lb_Now.Text = timeHour + ":" + timeMin + " AM";
+                lb_Now.Text = timeHour + ":" + timeMin.ToString() + " AM";
             }
+            //  Checking tostring method
+            MessageBox.Show(timeHour + ":" + timeMin.ToString() + " PM");
         }
 
         private void bn_Submit_Click(object sender, EventArgs e)
@@ -80,12 +82,29 @@ namespace ParkALot
             
             
         }
+        //  Timer to reset forms. Currently not working
+        //public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
+        //{
+        //    System.Timers.Timer myTimer = (System.Timers.Timer)sender;
+        //    myTimer.Stop();
+        //    //Application.Restart();
+        //}
 
-        public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
+
+        // ATTENION: this method will add a '0' to the front of the minute integer if it displays as only one digit.
+        public override string ToString()
         {
-            System.Timers.Timer myTimer = (System.Timers.Timer)sender;
-            myTimer.Stop();
-            //Application.Restart();
+            //return base.ToString();
+            string min = "";
+            if (min.Length > 0)
+            {
+                return min = "0" + min;
+
+            }
+            else
+            {
+                return min;
+            }
         }
     }
 }
