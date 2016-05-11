@@ -16,9 +16,5 @@ namespace ParkALot
         public static DateTime TimeEnd { get; set; }
         public static string LicensePlate { get; set; }
 
-
-        public static void ContinuumTransfunctioner()
-        {
-        }
     }
 }

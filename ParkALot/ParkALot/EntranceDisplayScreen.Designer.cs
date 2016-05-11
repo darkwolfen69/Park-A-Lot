@@ -26,7 +26,8 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        // Madison changed this from private to protected. 
+        protected void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             this.lb_header = new System.Windows.Forms.Label();
@@ -127,7 +128,7 @@
             this.lb_WalkinHeader.TabIndex = 6;
             this.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!";
             this.lb_WalkinHeader.Visible = false;
-            this.lb_WalkinHeader.TextChanged += new System.EventHandler(this.lb_WalkinHeader_TextChanged);
+            //this.lb_WalkinHeader.TextChanged += new System.EventHandler(this.lb_WalkinHeader_TextChanged);
             // 
             // lb_Ticket
             // 

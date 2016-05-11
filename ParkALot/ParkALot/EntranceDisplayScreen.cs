@@ -29,8 +29,9 @@ namespace ParkALot
             }
             else
             {
-                lb_Ticket.Text = "There is no spaces available.\nPlease exit the garage.";
+                lb_Ticket.Text = "There are no spaces available.\nPlease exit the garage.";
             }
+
             bn_walkin.Hide();
             bn_ResCust.Hide();
             lb_WalkinWarning.Hide();
@@ -39,6 +40,19 @@ namespace ParkALot
             lb_ParkingInstructions.Show();
             lb_WalkinHeader.Show();
             lb_Ticket.Show();
+
+
+            ResetTimer newTimer = new ResetTimer();
+            newTimer.ContinuumTransfunctioner();
+
+            bn_walkin.Show();
+            bn_ResCust.Show();
+            lb_WalkinWarning.Show();
+            lb_ResCusWarning.Show();
+            lb_OptDetail.Show();
+            lb_ParkingInstructions.Hide();
+            lb_WalkinHeader.Hide();
+            lb_Ticket.Hide();
         }
 
         private void bn_ResCust_Click(object sender, EventArgs e)
@@ -65,23 +79,22 @@ namespace ParkALot
             exit.Show();
         }
 
-        private void lb_WalkinHeader_TextChanged(object sender, EventArgs e)
-        {
+        //private void lb_WalkinHeader_TextChanged(object sender, EventArgs e)
+        //{
+        //    System.Timers.Timer myTimer = new System.Timers.Timer();
+        //    myTimer.Elapsed += myTimer_Elapsed;
+        //    myTimer.Interval = 5000;
+        //    myTimer.Start();
+        //}
 
-            System.Timers.Timer myTimer = new System.Timers.Timer();
-            myTimer.Elapsed += myTimer_Elapsed;
-            myTimer.Interval = 5000;
-            myTimer.Start();
-        }
+        //commeted out line 131 in EntranceDisplayScreen.Designer.cs
 
+        //public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
+        //{
+        //    System.Timers.Timer myTimer = (System.Timers.Timer)sender;
+        //    myTimer.Stop();
+        //    //this.Hide();  //throws a Threading exception.
 
-
-        public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            System.Timers.Timer myTimer = (System.Timers.Timer)sender;
-            myTimer.Stop();
-            //this.Hide();  //throws a Threading exception.
-
-        }
+        //}
     }
 }
