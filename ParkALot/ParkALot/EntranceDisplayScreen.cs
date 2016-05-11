@@ -47,19 +47,6 @@ namespace ParkALot
             myTimer.Elapsed += myTimer_Elapsed;
             myTimer.Interval = 5000;
             myTimer.Start();
-            
-
-            //ResetTimer newTimer = new ResetTimer();  //This is causing the error with not displaying anything.
-            //newTimer.ContinuumTransfunctioner();
-
-            //bn_walkin.Show();
-            //bn_ResCust.Show();
-            //lb_WalkinWarning.Show();
-            //lb_ResCusWarning.Show();
-            //lb_OptDetail.Show();
-            //lb_ParkingInstructions.Hide();  //This is the code that resets the form.  Good job Madison.
-            //lb_WalkinHeader.Hide();
-            //lb_Ticket.Hide();
         }
 
         private void bn_ResCust_Click(object sender, EventArgs e)
@@ -101,17 +88,6 @@ namespace ParkALot
             this.lb_Ticket.Invoke((Action)delegate() { this.lb_ParkingInstructions.Hide(); });
             this.lb_Ticket.Invoke((Action)delegate() { this.lb_WalkinHeader.Hide(); });
             this.lb_Ticket.Invoke((Action)delegate() { this.lb_Ticket.Hide(); });
-
-
-            //bn_walkin.Show();
-            //bn_ResCust.Show();
-            //lb_WalkinWarning.Show();
-            //lb_ResCusWarning.Show();
-            //lb_OptDetail.Show();
-            //lb_ParkingInstructions.Hide();  //This is the code that resets the form.  Good job Madison.
-            //lb_WalkinHeader.Hide();
-            //lb_Ticket.Hide();
-
         }
     }
 }

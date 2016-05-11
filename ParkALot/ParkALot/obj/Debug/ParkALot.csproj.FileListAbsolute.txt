@@ -30,7 +30,6 @@ C:\Users\Oscar\Documents\Visual Studio 2013\Projects\FinalProject\Park-A-Lot\Par
 C:\Users\Oscar\Documents\Visual Studio 2013\Projects\FinalProject\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.EntranceLicensePlate.resources
 C:\Users\Oscar\Documents\Visual Studio 2013\Projects\FinalProject\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.Properties.Resources.resources
 C:\Users\Oscar\Documents\Visual Studio 2013\Projects\FinalProject\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.csproj.GenerateResource.Cache
-=======
 C:\Users\Cody\Desktop\School\Adv Structured Language\Class Project\Park-A-Lot\ParkALot\ParkALot\bin\Debug\ParkALot.exe.config
 C:\Users\Cody\Desktop\School\Adv Structured Language\Class Project\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.exe
 C:\Users\Cody\Desktop\School\Adv Structured Language\Class Project\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.pdb
@@ -56,7 +55,6 @@ E:\Advanced Structured Languages\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot
 G:\Advanced Structured Languages\Park-A-Lot\ParkALot\ParkALot\bin\Debug\ParkALot.exe.config
 G:\Advanced Structured Languages\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.exe
 G:\Advanced Structured Languages\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.pdb
->>>>>>> origin/master
 C:\Users\kmolhusen\Desktop\Park-A-Lot\ParkALot\ParkALot\bin\Debug\ParkALot.exe.config
 C:\Users\kmolhusen\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.exe
 C:\Users\kmolhusen\Desktop\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.csprojResolveAssemblyReference.cache
