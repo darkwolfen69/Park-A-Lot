@@ -44,6 +44,7 @@ namespace ParkALot
             }
             else
             {
+                entranceDisplayScreen.lb_WalkinHeader.Text = "\nYour license plate number was not found.\nPlease enter your customer number.";
                 customerNumber.Show();
                 this.Hide();
             }

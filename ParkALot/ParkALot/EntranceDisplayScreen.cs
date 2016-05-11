@@ -53,6 +53,7 @@ namespace ParkALot
             lb_Ticket.Hide();
             lb_ParkingInstructions.Hide();
             lb_OptDetail.Hide();
+            lb_WalkinHeader.Text += "\n\nReading license plate.\nPlease keep your vehicle parked.";
             lb_WalkinHeader.Show();
         }
 

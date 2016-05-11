@@ -51,27 +51,28 @@ namespace ParkALot
         public void GenerateNumber(object sender, EventArgs e)
         {
             var buttonNumber = sender as Button;
-            customerNumber.Text += buttonNumber.Text;
+            txbx_cusNum.Text += buttonNumber.Text;
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Customer.CustNum = customerNumber.Text;
+            Customer.CustNum = txbx_cusNum.Text;
             DataObject dbConnect = new DataObject();
             ElevatorDisplayScreen elevator = new ElevatorDisplayScreen();
-            int custNumber = int.Parse(customerNumber.Text);
+            int custNumber = int.Parse(txbx_cusNum.Text);
             if (dbConnect.DetermineIfCustomerExists(custNumber))
             {
                 displayScreen.lb_WalkinWarning.Hide();
                 displayScreen.lb_ResCusWarning.Hide();
                 displayScreen.bn_ResCust.Hide();
                 displayScreen.bn_walkin.Hide();
-                displayScreen.lb_Ticket.Show();
+                displayScreen.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot.\n\nPlease pull forward.";
+                //displayScreen.lb_Ticket.Show();
                 displayScreen.lb_Ticket.Text = "Thank you!";
                 displayScreen.lb_Ticket.Font = new System.Drawing.Font("Comic Sans MS", 12);
                 displayScreen.lb_OptDetail.Location = new Point(255, 255);
                 displayScreen.lb_OptDetail.Text = "Please pull towards the elevator!";
-                displayScreen.lb_OptDetail.Show();
+                //displayScreen.lb_OptDetail.Show();
                 dbConnect.UpdateCustomerWithLicensePlate(custNumber, lpReader.tb_LPNum.Text);
                 elevator.Show();
                 Customer.LicensePlate = lpReader.tb_LPNum.Text;
