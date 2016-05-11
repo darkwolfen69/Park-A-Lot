@@ -14,7 +14,6 @@ C:\Users\Cody\Desktop\School\Adv Structured Language\Notes\ParkALot\ParkALot\obj
 C:\Users\Cody\Desktop\School\Adv Structured Language\Notes\ParkALot\ParkALot\obj\Debug\ParkALot.ElevatorLicensePlate.resources
 C:\Users\Cody\Desktop\School\Adv Structured Language\Notes\ParkALot\ParkALot\obj\Debug\ParkALot.ElevatorReservationTime.resources
 C:\Users\Cody\Desktop\School\Adv Structured Language\Notes\ParkALot\ParkALot\obj\Debug\ParkALot.ElevatorReservedParking.resources
-<<<<<<< HEAD
 C:\Users\Oscar\Documents\Visual Studio 2013\Projects\FinalProject\Park-A-Lot\ParkALot\ParkALot\bin\Debug\ParkALot.exe.config
 C:\Users\Oscar\Documents\Visual Studio 2013\Projects\FinalProject\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.exe
 C:\Users\Oscar\Documents\Visual Studio 2013\Projects\FinalProject\Park-A-Lot\ParkALot\ParkALot\obj\Debug\ParkALot.pdb
