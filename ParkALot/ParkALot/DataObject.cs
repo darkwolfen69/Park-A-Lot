@@ -265,6 +265,54 @@ namespace ParkALot
         {
             //This method needs to update the end time for registered customers.  Walkin customers will also pass by this license plate
             //reader, so it only needs to work if the license plate is in the database.  Could make possible use of one of the methods above.
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
+            connection.Open();
+
+            int customerNumber = 0;
+
+            using (SqlCommand getCustomerID = connection.CreateCommand())
+            {
+                getCustomerID.CommandText = "SELECT TOP 1 CustomerID FROM dbo.Demographic WHERE PlateNumber = '" + licensePlate + "';";
+
+                using (SqlDataReader reader = getCustomerID.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        customerNumber = reader.GetInt32(0);
+                    }
+                }
+            }
+
+            int parkingId = 0;
+
+            using (SqlCommand getParkingID = connection.CreateCommand())
+            {
+                getParkingID.CommandText = "SELECT ParkingSpaceID FROM dbo.Reservation WHERE CustomerID = " + customerNumber + ";";
+
+                using (SqlDataReader reader = getParkingID.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        parkingId = reader.GetInt32(0);
+                    }
+                }
+            }
+
+            using(SqlCommand updateReservation = connection.CreateCommand())
+            {
+                updateReservation.CommandText = "UPDATE dbo.Parking SET IsAvailable = 'True' WHERE ParkingSpaceID =" + parkingId + ";";
+                updateReservation.ExecuteNonQuery();
+            }
+
+            using(SqlCommand deleteReservation = connection.CreateCommand())
+            {
+                deleteReservation.CommandText = "DELETE FROM dbo.Reservation WHERE ParkingSpaceID = (SELECT TOP 1 ParkingSpaceID FROM dbo.Reservation WHERE ParkingSpaceID = " + parkingId + " ORDER BY TimeIn DESC);";
+                deleteReservation.ExecuteNonQuery();
+            }
+
+            Marquee.updateMarquee();
+            connection.Close();
         }
     }
 }

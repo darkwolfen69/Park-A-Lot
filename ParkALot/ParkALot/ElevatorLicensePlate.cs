@@ -41,7 +41,7 @@ namespace ParkALot
             
             if (dataObject.DetermineIfCustomerExistsByLicense(tb_LPNum.Text))
             {
-                if (Customer.TimeStart.AddMinutes(-10) > DateTime.Now && Customer.TimeEnd < DateTime.Now) //determine if there is a reservation
+                if (Customer.TimeStart > DateTime.Now && Customer.TimeEnd < DateTime.Now) //determine if there is a reservation
                 {
                     elevatorDisplayScreen.lb_Display.Text = Customer.FullName + "\n" + "Parking Spot \n" + Customer.TimeStart + " - " + Customer.TimeEnd;
                 }
