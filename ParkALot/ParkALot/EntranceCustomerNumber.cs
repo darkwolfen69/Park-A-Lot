@@ -51,15 +51,15 @@ namespace ParkALot
         public void GenerateNumber(object sender, EventArgs e)
         {
             var buttonNumber = sender as Button;
-            txbx_cusNum.Text += buttonNumber.Text;
+            customerNumber.Text += buttonNumber.Text;
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Customer.CustNum = txbx_cusNum.Text;
+            Customer.CustNum = customerNumber.Text;
             DataObject dbConnect = new DataObject();
             ElevatorDisplayScreen elevator = new ElevatorDisplayScreen();
-            int custNumber = int.Parse(txbx_cusNum.Text);
+            int custNumber = int.Parse(customerNumber.Text);
             if (dbConnect.DetermineIfCustomerExists(custNumber))
             {
                 displayScreen.lb_WalkinWarning.Hide();
@@ -91,11 +91,5 @@ namespace ParkALot
             }
             this.Close();
         }
-
-        private void btn_clear_Click(object sender, EventArgs e)
-        {
-            txbx_cusNum.Clear();
-        }
-
     }
 }

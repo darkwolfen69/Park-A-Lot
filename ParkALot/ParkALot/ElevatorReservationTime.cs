@@ -37,30 +37,28 @@ namespace ParkALot
             {
                 timeHour -= 12;
 
-                lb_Now.Text = timeHour + ":" + timeMin.ToString() + " PM";
+                lb_Now.Text = timeHour + ":" + timeMin + " PM";
             }
             else if (timeHour == 0)
             {
                 timeHour = 12;
 
-                lb_Now.Text = timeHour + ":" + timeMin.ToString() + " AM";
+                lb_Now.Text = timeHour + ":" + timeMin + " AM";
             }
             else if (timeHour == 12)
             {
-                lb_Now.Text = timeHour + ":" + timeMin.ToString() + " PM";
+                lb_Now.Text = timeHour + ":" + timeMin + " PM";
             }
             else
             {
-                lb_Now.Text = timeHour + ":" + timeMin.ToString() + " AM";
+                lb_Now.Text = timeHour + ":" + timeMin + " AM";
             }
-            //  Checking tostring method
-            MessageBox.Show(timeHour + ":" + timeMin.ToString() + " PM");
         }
 
         private void bn_Submit_Click(object sender, EventArgs e)
         {
             DataObject DO = new DataObject();
-
+            DO.ReturnBasedOnLicensePlateNumber(Customer.LicensePlate);
             DateTime timeEnd = DateTime.Parse(textBox2.Text);
             int custNum = int.Parse(Customer.CustNum);
 
@@ -82,29 +80,12 @@ namespace ParkALot
             
             
         }
-        //  Timer to reset forms. Currently not working
-        //public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
-        //{
-        //    System.Timers.Timer myTimer = (System.Timers.Timer)sender;
-        //    myTimer.Stop();
-        //    //Application.Restart();
-        //}
 
-
-        // ATTENION: this method will add a '0' to the front of the minute integer if it displays as only one digit.
-        public override string ToString()
+        public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            //return base.ToString();
-            string min = "";
-            if (min.Length > 0)
-            {
-                return min = "0" + min;
-
-            }
-            else
-            {
-                return min;
-            }
+            System.Timers.Timer myTimer = (System.Timers.Timer)sender;
+            myTimer.Stop();
+            //Application.Restart();
         }
     }
 }
