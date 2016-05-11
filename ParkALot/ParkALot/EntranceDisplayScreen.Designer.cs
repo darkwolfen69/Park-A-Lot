@@ -115,6 +115,7 @@
             this.lb_OptDetail.Size = new System.Drawing.Size(331, 19);
             this.lb_OptDetail.TabIndex = 5;
             this.lb_OptDetail.Text = "Please choose the option that applies to you!";
+            this.lb_OptDetail.TextChanged += new System.EventHandler(this.lb_OptDetail_TextChanged);
             // 
             // lb_WalkinHeader
             // 
@@ -127,7 +128,6 @@
             this.lb_WalkinHeader.TabIndex = 6;
             this.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!";
             this.lb_WalkinHeader.Visible = false;
-            //this.lb_WalkinHeader.TextChanged += new System.EventHandler(this.lb_WalkinHeader_TextChanged);
             // 
             // lb_Ticket
             // 

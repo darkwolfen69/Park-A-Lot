@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace ParkALot
@@ -58,7 +59,7 @@ namespace ParkALot
         {
             Customer.CustNum = txbx_cusNum.Text;
             DataObject dbConnect = new DataObject();
-            ElevatorDisplayScreen elevator = new ElevatorDisplayScreen();
+            ElevatorDisplayScreen elevator = new ElevatorDisplayScreen(displayScreen);
             int custNumber = int.Parse(txbx_cusNum.Text);
             if (dbConnect.DetermineIfCustomerExists(custNumber))
             {
@@ -79,6 +80,7 @@ namespace ParkALot
             }
             else
             {
+                displayScreen.lb_WalkinHeader.Hide();
                 displayScreen.lb_WalkinWarning.Hide();
                 displayScreen.lb_ResCusWarning.Hide();
                 displayScreen.bn_ResCust.Hide();

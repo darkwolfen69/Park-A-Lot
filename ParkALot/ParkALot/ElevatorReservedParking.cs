@@ -14,35 +14,40 @@ namespace ParkALot
     public partial class ElevatorReservedParking : Form
     {
         private ElevatorDisplayScreen elevatorDisplayScreen;
+        private EntranceDisplayScreen entranceDisplayScreen;
 
         public ElevatorReservedParking()
         {
             InitializeComponent();
         }
 
-        public ElevatorReservedParking(ElevatorDisplayScreen elevatorDisplayScreen)
+        public ElevatorReservedParking(ElevatorDisplayScreen elevatorDisplayScreen, EntranceDisplayScreen entranceDisplayScreen)
         {
             // TODO: Complete member initialization
             this.elevatorDisplayScreen = elevatorDisplayScreen;
+            this.entranceDisplayScreen = entranceDisplayScreen;
             InitializeComponent();
         }
 
         private void bn_No_Click(object sender, EventArgs e)
         {
             elevatorDisplayScreen.lb_Display.Text = "Please, exit the parking garage.";
-            this.Close(); 
-            //  This is a timer...does it work? mm
+            this.Close();
+
             System.Timers.Timer myTimer = new System.Timers.Timer();
             myTimer.Elapsed += myTimer_Elapsed;
             myTimer.Interval = 5000;
             myTimer.Start();
+            //entranceDisplayScreen.lb_OptDetail.Text = "Please, exit the parking garage.";  //throws an error.
         }
 
         public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             System.Timers.Timer myTimer = (System.Timers.Timer)sender;
             myTimer.Stop();
-            //Application.Restart();
+            //this.Invoke((Action)delegate() { this.Close(); });
+            this.Close();
+
         }
 
         private void bn_Yes_Click(object sender, EventArgs e)

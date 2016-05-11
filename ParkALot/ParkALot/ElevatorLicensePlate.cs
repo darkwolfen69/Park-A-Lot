@@ -16,16 +16,18 @@ namespace ParkALot
     public partial class ElevatorLicensePlate : Form
     {
         private ElevatorDisplayScreen elevatorDisplayScreen;
+        private EntranceDisplayScreen entranceDisplayScreen;
 
         public ElevatorLicensePlate()
         {
             InitializeComponent();
         }
 
-        public ElevatorLicensePlate(ElevatorDisplayScreen elevatorDisplayScreen)
+        public ElevatorLicensePlate(ElevatorDisplayScreen elevatorDisplayScreen, EntranceDisplayScreen entranceDisplayScreen)
         {
             // TODO: Complete member initialization
             this.elevatorDisplayScreen = elevatorDisplayScreen;
+            this.entranceDisplayScreen = entranceDisplayScreen;
             InitializeComponent();
         }
 
@@ -48,13 +50,14 @@ namespace ParkALot
                 else
                 {
                     elevatorDisplayScreen.lb_Display.Text = "You do not have a reservation at this time.\nWould you like to make a reservation?";
-                    ElevatorReservedParking question = new ElevatorReservedParking(elevatorDisplayScreen);
+                    ElevatorReservedParking question = new ElevatorReservedParking(elevatorDisplayScreen, entranceDisplayScreen);
                     question.Show();
                 }
             }
             else
             {
                 elevatorDisplayScreen.lb_Display.Text = "You are not a registered customer.\nPlease exit the garage.";
+
             }
             this.Close();
         }
