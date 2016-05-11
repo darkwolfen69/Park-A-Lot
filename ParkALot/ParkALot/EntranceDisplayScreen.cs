@@ -40,19 +40,26 @@ namespace ParkALot
             lb_ParkingInstructions.Show();
             lb_WalkinHeader.Show();
             lb_Ticket.Show();
+            
+            //resetDisplay();
 
+            System.Timers.Timer myTimer = new System.Timers.Timer();
+            myTimer.Elapsed += myTimer_Elapsed;
+            myTimer.Interval = 5000;
+            myTimer.Start();
+            
 
-            ResetTimer newTimer = new ResetTimer();
-            newTimer.ContinuumTransfunctioner();
+            //ResetTimer newTimer = new ResetTimer();  //This is causing the error with not displaying anything.
+            //newTimer.ContinuumTransfunctioner();
 
-            bn_walkin.Show();
-            bn_ResCust.Show();
-            lb_WalkinWarning.Show();
-            lb_ResCusWarning.Show();
-            lb_OptDetail.Show();
-            lb_ParkingInstructions.Hide();
-            lb_WalkinHeader.Hide();
-            lb_Ticket.Hide();
+            //bn_walkin.Show();
+            //bn_ResCust.Show();
+            //lb_WalkinWarning.Show();
+            //lb_ResCusWarning.Show();
+            //lb_OptDetail.Show();
+            //lb_ParkingInstructions.Hide();  //This is the code that resets the form.  Good job Madison.
+            //lb_WalkinHeader.Hide();
+            //lb_Ticket.Hide();
         }
 
         private void bn_ResCust_Click(object sender, EventArgs e)
@@ -69,6 +76,7 @@ namespace ParkALot
             lb_OptDetail.Hide();
             lb_WalkinHeader.Text += "\n\nReading license plate.\nPlease keep your vehicle parked.";
             lb_WalkinHeader.Show();
+
         }
 
         private void EntranceDisplayScreen_Load(object sender, EventArgs e)
@@ -79,22 +87,31 @@ namespace ParkALot
             exit.Show();
         }
 
-        //private void lb_WalkinHeader_TextChanged(object sender, EventArgs e)
-        //{
-        //    System.Timers.Timer myTimer = new System.Timers.Timer();
-        //    myTimer.Elapsed += myTimer_Elapsed;
-        //    myTimer.Interval = 5000;
-        //    myTimer.Start();
-        //}
+        
+        public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            System.Timers.Timer myTimer = (System.Timers.Timer)sender;
+            myTimer.Stop();
 
-        //commeted out line 131 in EntranceDisplayScreen.Designer.cs
+            this.bn_walkin.Invoke((Action)delegate() { this.bn_walkin.Show(); });
+            this.lb_Ticket.Invoke((Action)delegate() { this.bn_ResCust.Show(); });
+            this.lb_Ticket.Invoke((Action)delegate() { this.lb_WalkinWarning.Show(); });
+            this.lb_Ticket.Invoke((Action)delegate() { this.lb_ResCusWarning.Show(); });
+            this.lb_Ticket.Invoke((Action)delegate() { this.lb_OptDetail.Show(); });
+            this.lb_Ticket.Invoke((Action)delegate() { this.lb_ParkingInstructions.Hide(); });
+            this.lb_Ticket.Invoke((Action)delegate() { this.lb_WalkinHeader.Hide(); });
+            this.lb_Ticket.Invoke((Action)delegate() { this.lb_Ticket.Hide(); });
 
-        //public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
-        //{
-        //    System.Timers.Timer myTimer = (System.Timers.Timer)sender;
-        //    myTimer.Stop();
-        //    //this.Hide();  //throws a Threading exception.
 
-        //}
+            //bn_walkin.Show();
+            //bn_ResCust.Show();
+            //lb_WalkinWarning.Show();
+            //lb_ResCusWarning.Show();
+            //lb_OptDetail.Show();
+            //lb_ParkingInstructions.Hide();  //This is the code that resets the form.  Good job Madison.
+            //lb_WalkinHeader.Hide();
+            //lb_Ticket.Hide();
+
+        }
     }
 }

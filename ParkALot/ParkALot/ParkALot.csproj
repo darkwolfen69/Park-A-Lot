@@ -103,7 +103,6 @@
     <Compile Include="Parking.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResetTimer.cs" />
     <EmbeddedResource Include="ElevatorLicensePlate.resx">
       <DependentUpon>ElevatorLicensePlate.cs</DependentUpon>
     </EmbeddedResource>
