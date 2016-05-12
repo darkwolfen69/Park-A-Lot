@@ -58,8 +58,9 @@ namespace ParkALot
         private void button11_Click(object sender, EventArgs e)
         {
             Customer.CustNum = txbx_cusNum.Text;
+
             DataObject dbConnect = new DataObject();
-            ElevatorDisplayScreen elevator = new ElevatorDisplayScreen(displayScreen);
+
             int custNumber = int.Parse(txbx_cusNum.Text);
             if (dbConnect.DetermineIfCustomerExists(custNumber))
             {
@@ -68,15 +69,19 @@ namespace ParkALot
                 displayScreen.bn_ResCust.Hide();
                 displayScreen.bn_walkin.Hide();
                 displayScreen.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot.\n\nPlease pull forward.";
-                //displayScreen.lb_Ticket.Show();
                 displayScreen.lb_Ticket.Text = "Thank you!";
                 displayScreen.lb_Ticket.Font = new System.Drawing.Font("Cambria", 12);
                 displayScreen.lb_OptDetail.Location = new Point(255, 255);
                 displayScreen.lb_OptDetail.Text = "Please pull towards the elevator!";
-                //displayScreen.lb_OptDetail.Show();
                 dbConnect.UpdateCustomerWithLicensePlate(custNumber, lpReader.tb_LPNum.Text);
-                elevator.Show();
                 Customer.LicensePlate = lpReader.tb_LPNum.Text;
+                dbConnect.ReturnBasedOnLicensePlateNumber(Customer.LicensePlate);
+                System.Timers.Timer myTimer = new System.Timers.Timer();
+                myTimer.Elapsed += myTimer_Elapsed;
+                myTimer.Interval = 5000;
+                myTimer.Start();
+                ElevatorDisplayScreen elevator = new ElevatorDisplayScreen(displayScreen);
+                elevator.Show();
             }
             else
             {
@@ -94,6 +99,15 @@ namespace ParkALot
             }
             this.Close();
         }
+
+        private void myTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            System.Timers.Timer myTimer = (System.Timers.Timer)sender;
+            myTimer.Stop();
+
+            //ElevatorDisplayScreen elevator = new ElevatorDisplayScreen(displayScreen);
+            //elevator.Show();
+        }
         //  Clears customer number text box
         private void btn_clear_Click(object sender, EventArgs e)
         {
@@ -101,3 +115,5 @@ namespace ParkALot
         }
     }
 }
+
+            

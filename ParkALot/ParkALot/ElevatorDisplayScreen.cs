@@ -22,7 +22,6 @@ namespace ParkALot
 
         public ElevatorDisplayScreen(EntranceDisplayScreen entranceDisplayScreen)
         {
-            // TODO: Complete member initialization
             this.entranceDisplayScreen = entranceDisplayScreen;
             InitializeComponent();
         }
@@ -45,7 +44,13 @@ namespace ParkALot
                 myTimer.Interval = 5000;
                 myTimer.Start();
             }
-            
+            else if (lb_Display.Text.Contains("Parking Space:"))
+            {
+                System.Timers.Timer myTimer = new System.Timers.Timer();
+                myTimer.Elapsed += myTimer_Elapsed;
+                myTimer.Interval = 5000;
+                myTimer.Start();
+            }
         }
 
         public void myTimer_Elapsed(object sender, ElapsedEventArgs e)

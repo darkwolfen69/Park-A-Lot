@@ -37,8 +37,9 @@ namespace ParkALot
             if (test)
             {
                 Customer.LicensePlate = tb_LPNum.Text;
-                databaseConnection.ReturnBasedOnLicensePlateNumber(Customer.LicensePlate);
-                entranceDisplayScreen.lb_WalkinHeader.Text = "Please pull to the elevator!";
+                databaseConnection.ReturnBasedOnLicensePlateNumber(tb_LPNum.Text);
+                entranceDisplayScreen.lb_WalkinHeader.Text = "Please pull towards the elevator!";
+                entranceDisplayScreen.lb_OptDetail.Text = "Please pull towards the elevator!";
                 this.Close();
                 eleDisplay.Show();
             }

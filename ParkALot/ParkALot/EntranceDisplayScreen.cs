@@ -23,6 +23,7 @@ namespace ParkALot
             Parking.updateWalkin();
             if (Parking.nextWalkinAvailable != 0)
             {
+                lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!";
                 lb_Ticket.Text = "Please proceed to parking spot: " + Parking.nextWalkinAvailable.ToString();
                 lb_Ticket.Font = new System.Drawing.Font("Cambria", 20);
                 lb_Ticket.Location = new Point(125, 150);
@@ -45,8 +46,6 @@ namespace ParkALot
             lb_WalkinHeader.Show();
             lb_Ticket.Show();
             
-            //resetDisplay();
-
             System.Timers.Timer myTimer = new System.Timers.Timer();
             myTimer.Elapsed += myTimer_Elapsed;
             myTimer.Interval = 5000;
@@ -65,7 +64,7 @@ namespace ParkALot
             lb_Ticket.Hide();
             lb_ParkingInstructions.Hide();
             lb_OptDetail.Hide();
-            lb_WalkinHeader.Text += "\n\nReading license plate.\nPlease keep your vehicle parked.";
+            lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!\n\nReading license plate.\nPlease keep your vehicle parked.";
             lb_WalkinHeader.Show();
 
         }
@@ -94,11 +93,19 @@ namespace ParkALot
             this.lb_Ticket.Invoke((Action)delegate() { this.lb_Ticket.Hide(); });
             this.lb_OptDetail.Invoke((Action)delegate() { this.lb_OptDetail.Text = "Please choose the option that applies to you!"; });
             this.lb_OptDetail.Invoke((Action)delegate() { this.lb_OptDetail.Location = new Point(164, 332); });
+
         }
 
         private void lb_OptDetail_TextChanged(object sender, EventArgs e)
         {
             if (lb_OptDetail.Text == "Please exit the garage!")
+            {
+                System.Timers.Timer myTimer = new System.Timers.Timer();
+                myTimer.Elapsed += myTimer_Elapsed;
+                myTimer.Interval = 5000;
+                myTimer.Start();
+            }
+            else if (lb_OptDetail.Text == "Please pull towards the elevator!")
             {
                 System.Timers.Timer myTimer = new System.Timers.Timer();
                 myTimer.Elapsed += myTimer_Elapsed;

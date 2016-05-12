@@ -45,7 +45,6 @@ namespace ParkALot
         {
             System.Timers.Timer myTimer = (System.Timers.Timer)sender;
             myTimer.Stop();
-            //this.Invoke((Action)delegate() { this.Close(); });
             this.Close();
 
         }

@@ -25,7 +25,6 @@ namespace ParkALot
 
         public ElevatorLicensePlate(ElevatorDisplayScreen elevatorDisplayScreen, EntranceDisplayScreen entranceDisplayScreen)
         {
-            // TODO: Complete member initialization
             this.elevatorDisplayScreen = elevatorDisplayScreen;
             this.entranceDisplayScreen = entranceDisplayScreen;
             InitializeComponent();
@@ -33,19 +32,15 @@ namespace ParkALot
 
         private void bn_LPRead_Click(object sender, EventArgs e)
         {
-            //EntranceCustomerNumber newResCustomer = new EntranceCustomerNumber(elevatorDisplayScreen);
-            //newResCustomer.Show();
-            //elevatorDisplayScreen.lb_Display.Text = "License plate not found.  Please enter your Customer Number.";
-
             DataObject dataObject = new DataObject();
             dataObject.ReturnBasedOnLicensePlateNumber(tb_LPNum.Text);
             string today = DateTime.Now.ToString();
             
             if (dataObject.DetermineIfCustomerExistsByLicense(tb_LPNum.Text))
             {
-                if (Customer.TimeStart > DateTime.Now && Customer.TimeEnd < DateTime.Now) //determine if there is a reservation
+                if (Customer.TimeStart < DateTime.Now && Customer.TimeEnd > DateTime.Now) //determine if there is a reservation
                 {
-                    elevatorDisplayScreen.lb_Display.Text = Customer.FullName + "\n" + "Parking Spot \n" + Customer.TimeStart + " - " + Customer.TimeEnd;
+                    elevatorDisplayScreen.lb_Display.Text = Customer.FullName + "\nParking Space: " + Parking.nextResAvailable.ToString() + "\n" + Customer.TimeStart + " - " + Customer.TimeEnd;
                 }
                 else
                 {

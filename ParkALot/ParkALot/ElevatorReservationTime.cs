@@ -26,7 +26,6 @@ namespace ParkALot
 
         public ElevatorReservationTime(ElevatorDisplayScreen elevatorDisplayScreen)
         {
-            // TODO: Complete member initialization
             this.elevatorDisplayScreen = elevatorDisplayScreen;
             InitializeComponent();
         }
@@ -78,13 +77,5 @@ namespace ParkALot
                 elevatorDisplayScreen.lb_Display.Text = "No reservations available at this time.\nPlease exit the garage.";
             }  
         }
-
-        // Unneeded Timer
-        //public void myTimer_Elapsed(object sender, ElapsedEventArgs e)
-        //{
-        //    System.Timers.Timer myTimer = (System.Timers.Timer)sender;
-        //    myTimer.Stop();
-        //    //Application.Restart();
-        //}
     }
 }

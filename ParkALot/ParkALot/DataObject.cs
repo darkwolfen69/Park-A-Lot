@@ -187,6 +187,7 @@ namespace ParkALot
             connection.Open();
 
             int parkingID = 0;
+            int resID = 0;
 
             using(SqlCommand getParkingID = connection.CreateCommand())
             {
@@ -210,6 +211,7 @@ namespace ParkALot
             connection.Open();
 
             int parkingID = 0;
+            int resID = 0;
 
             using(SqlCommand getParkingID = connection.CreateCommand())
             {
@@ -224,10 +226,23 @@ namespace ParkALot
                 }
             }
 
+            using (SqlCommand getResID = connection.CreateCommand())
+            {
+                getResID.CommandText = "SELECT TOP 1 ReservationID FROM dbo.Reservation WHERE CustomerID = " + customerNumber + " ORDER BY TimeIn DESC;";
+
+                using (SqlDataReader reader = getResID.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        resID = reader.GetInt32(0);
+                    }
+                }
+            }
+
             using(SqlCommand updateReservation = connection.CreateCommand())
             {
                 updateReservation.CommandText = "UPDATE dbo.Reservation SET ParkingSpaceID =" +
-                                                 parkingID + " WHERE CustomerID =" + customerNumber + ";";
+                                                 parkingID + " WHERE CustomerID =" + customerNumber + " AND ReservationID = " + resID + ";";
                 updateReservation.ExecuteNonQuery();
 
                 updateReservation.CommandText = "UPDATE dbo.Parking SET IsAvailable= 'False' WHERE ParkingSpaceID =" + parkingID + ";";
@@ -288,7 +303,7 @@ namespace ParkALot
 
             using (SqlCommand getParkingID = connection.CreateCommand())
             {
-                getParkingID.CommandText = "SELECT ParkingSpaceID FROM dbo.Reservation WHERE CustomerID = " + customerNumber + ";";
+                getParkingID.CommandText = "SELECT Top 1 ParkingSpaceID FROM dbo.Reservation WHERE CustomerID = " + customerNumber + ";";
 
                 using (SqlDataReader reader = getParkingID.ExecuteReader())
                 {
