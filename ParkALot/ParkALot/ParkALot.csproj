@@ -94,6 +94,12 @@
     <Compile Include="ExitLicensePlate.Designer.cs">
       <DependentUpon>ExitLicensePlate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FancyCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FancyCar.Designer.cs">
+      <DependentUpon>FancyCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Marquee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExitLicensePlate.resx">
       <DependentUpon>ExitLicensePlate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FancyCar.resx">
+      <DependentUpon>FancyCar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Marquee.resx">
       <DependentUpon>Marquee.cs</DependentUpon>

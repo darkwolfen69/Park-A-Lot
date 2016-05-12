@@ -12,6 +12,9 @@ namespace ParkALot
 {
     public class DataObject
     {
+        //This method will return true or false
+        //based on if the customer exists in the database
+        //based on their customerNumber.
         public bool DetermineIfCustomerExists(int customerNumber)
         {
             SqlConnection connection = new SqlConnection();
@@ -55,6 +58,9 @@ namespace ParkALot
             return exists;
         }
 
+        //This method will return true or false
+        //based on if the customer exists in the database
+        //based on their licenseNumber.
         public bool DetermineIfCustomerExistsByLicense(string licenseNumber)
         {
             SqlConnection connection = new SqlConnection();
@@ -98,6 +104,8 @@ namespace ParkALot
             return exists;
         }
 
+        //This method will return the customer's information
+        //based on licensePlateNumber
         public void ReturnBasedOnLicensePlateNumber(string licensePlateNumber)
         {
             SqlConnection connection = new SqlConnection();
@@ -132,6 +140,7 @@ namespace ParkALot
             connection.Close();
         }
 
+        //This method will insert a new reservation into the database
         public void InsertNewReservation(int customerNumber, string licensePlateNumber, DateTime dayOfReservation,
                                          DateTime timeIn, DateTime timeOut)
         {
@@ -155,6 +164,8 @@ namespace ParkALot
             connection.Close();
         }
 
+        //This method will update the customer's information with 
+        //an end-user entered license plate number.
         public void UpdateCustomerWithLicensePlate(int customerNumber, string licenseNumber)
         {
 
@@ -172,6 +183,8 @@ namespace ParkALot
             connection.Close();
         }
 
+        //This method will return the next available
+        //parking space id
         public int CheckNextAvailable()
         {
             SqlConnection connection = new SqlConnection();
@@ -196,6 +209,9 @@ namespace ParkALot
             return parkingID;
         }
 
+        //THis method will update a customer's reservation
+        //with a parking space and then it will update the 
+        //parking space to not available
         public void UpdateReservationWithParkingID(int customerNumber)
         {
             SqlConnection connection = new SqlConnection();
@@ -245,6 +261,8 @@ namespace ParkALot
 
         }
 
+        //This method will return the number of parkings spots that
+        //are open
         public int ReturnNumberOfParkingSpotsAvailable()
         {
             SqlConnection connection = new SqlConnection();
@@ -267,11 +285,13 @@ namespace ParkALot
 
         }
 
-
+        //This method will delete the customer's
+        //reservation when they exit and then
+        //update the parking spot that they were 
+        //using back to available
         public void CustomerExit(string licensePlate)
         {
-            //This method needs to update the end time for registered customers.  Walkin customers will also pass by this license plate
-            //reader, so it only needs to work if the license plate is in the database.  Could make possible use of one of the methods above.
+            
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
             connection.Open();
