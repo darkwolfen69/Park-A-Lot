@@ -24,9 +24,9 @@ namespace ParkALot
             if (Parking.nextWalkinAvailable != 0)
             {
                 lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!";
-                lb_Ticket.Text = "Please proceed to parking spot: " + Parking.nextWalkinAvailable.ToString();
-                lb_Ticket.Font = new System.Drawing.Font("Cambria", 20);
-                lb_Ticket.Location = new Point(125, 150);
+                lb_Ticket.Text = "Parking spot:\n" + Parking.nextWalkinAvailable.ToString();
+                //lb_Ticket.Font = new System.Drawing.Font("Cambria", 20);
+                //lb_Ticket.Location = new Point(125, 150);
                 Parking.walkin[Parking.nextWalkinAvailable - 1] = false;
                 Marquee.updateMarquee();
             }
@@ -64,8 +64,10 @@ namespace ParkALot
             lb_Ticket.Hide();
             lb_ParkingInstructions.Hide();
             lb_OptDetail.Hide();
-            lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!\n\nReading license plate.\nPlease keep your vehicle parked.";
+            lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!\n\n\n\nReading license plate.\nPlease keep your vehicle parked.";
             lb_WalkinHeader.Show();
+
+            lb_WalkinHeader.Location = new System.Drawing.Point(190,76);
 
         }
 
@@ -112,6 +114,20 @@ namespace ParkALot
                 myTimer.Interval = 5000;
                 myTimer.Start();
             }
+        }
+
+        private void lb_Ticket_TextChanged(object sender, EventArgs e)
+        {
+            if (lb_Ticket.Text.Contains("exit"))
+            {
+                System.Timers.Timer myTimer = new System.Timers.Timer();
+                myTimer.Elapsed += myTimer_Elapsed;
+                myTimer.Interval = 10000;
+                myTimer.Start();
+
+                
+            }
+
         }
     }
 }

@@ -55,55 +55,90 @@ namespace ParkALot
             txbx_cusNum.Text += buttonNumber.Text;
         }
 
+        //  Handles customer number entered
         private void button11_Click(object sender, EventArgs e)
         {
             Customer.CustNum = txbx_cusNum.Text;
 
             DataObject dbConnect = new DataObject();
-
-            int custNumber = int.Parse(txbx_cusNum.Text);
-            if (dbConnect.DetermineIfCustomerExists(custNumber))
+            //  handles blank textbox when "ok" is clicked
+            try
             {
-                displayScreen.lb_WalkinWarning.Hide();
-                displayScreen.lb_ResCusWarning.Hide();
-                displayScreen.bn_ResCust.Hide();
-                displayScreen.bn_walkin.Hide();
-                displayScreen.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot.\n\nPlease pull forward.";
-                displayScreen.lb_Ticket.Text = "Thank you!";
-                displayScreen.lb_Ticket.Font = new System.Drawing.Font("Cambria", 12);
-                displayScreen.lb_OptDetail.Location = new Point(255, 255);
-                displayScreen.lb_OptDetail.Text = "Please pull towards the elevator!";
-                dbConnect.UpdateCustomerWithLicensePlate(custNumber, lpReader.tb_LPNum.Text);
-                Customer.LicensePlate = lpReader.tb_LPNum.Text;
-                dbConnect.ReturnBasedOnLicensePlateNumber(Customer.LicensePlate);
-                System.Timers.Timer myTimer = new System.Timers.Timer();
-                myTimer.Elapsed += myTimer_Elapsed;
-                myTimer.Interval = 5000;
-                myTimer.Start();
-                ElevatorDisplayScreen elevator = new ElevatorDisplayScreen(displayScreen);
-                elevator.Show();
+                int custNumber = int.Parse(txbx_cusNum.Text);
+                //  If customer
+                if (dbConnect.DetermineIfCustomerExists(custNumber))
+                {
+                    displayScreen.lb_WalkinWarning.Hide();
+                    displayScreen.lb_ResCusWarning.Hide();
+                    displayScreen.bn_ResCust.Hide();
+                    displayScreen.bn_walkin.Hide();
+                    displayScreen.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot.\n\nPlease pull forward.";
+                    displayScreen.lb_Ticket.Text = "Thank you!";
+                    displayScreen.lb_Ticket.Font = new System.Drawing.Font("Cambria", 12);
+                    displayScreen.lb_OptDetail.Location = new Point(255, 255);
+                    //  Do not change the string text for OptDetail
+                    displayScreen.lb_OptDetail.Text = "Please pull towards the elevator!";
+                    dbConnect.UpdateCustomerWithLicensePlate(custNumber, lpReader.tb_LPNum.Text);
+                    Customer.LicensePlate = lpReader.tb_LPNum.Text;
+                    dbConnect.ReturnBasedOnLicensePlateNumber(Customer.LicensePlate);
+                    System.Timers.Timer myTimer = new System.Timers.Timer();
+                    myTimer.Elapsed += myTimer_Elapsed;
+                    myTimer.Interval = 5000;
+                    myTimer.Start();
+                    ElevatorDisplayScreen elevator = new ElevatorDisplayScreen(displayScreen);
+                    elevator.Show();
+                }
+                //  If not customer
+                else
+                {
+                    displayScreen.lb_WalkinHeader.Hide();
+                    displayScreen.lb_WalkinWarning.Hide();
+                    displayScreen.lb_ResCusWarning.Hide();
+                    displayScreen.bn_ResCust.Hide();
+                    displayScreen.bn_walkin.Hide();
+                    displayScreen.lb_Ticket.Show();
+                    displayScreen.lb_Ticket.Text = "You are not a registered customer!";
+                    displayScreen.lb_Ticket.Font = new System.Drawing.Font("Cambria", 16, FontStyle.Bold);
+                    displayScreen.lb_Ticket.Location = new System.Drawing.Point(150,127);
+                    displayScreen.lb_OptDetail.Location = new Point(250, 255);
+                    //  Do not change the string text for OptDetail
+                    displayScreen.lb_OptDetail.Text = "Please exit the garage!";
+                    displayScreen.lb_OptDetail.Show();
+                }
+                this.Close();
             }
-            else
+            //  blank customer number text box
+            catch (FormatException)
             {
+                displayScreen.lb_Ticket.Text = "You must enter a number, or exit the garage.";
+
+                displayScreen.lb_Ticket.Font = new System.Drawing.Font("Cambria", 14.0F);
+                displayScreen.lb_Ticket.Location = new System.Drawing.Point(150, 127);
+                displayScreen.lb_Ticket.ForeColor = System.Drawing.Color.Black;
+
+
                 displayScreen.lb_WalkinHeader.Hide();
                 displayScreen.lb_WalkinWarning.Hide();
                 displayScreen.lb_ResCusWarning.Hide();
                 displayScreen.bn_ResCust.Hide();
                 displayScreen.bn_walkin.Hide();
                 displayScreen.lb_Ticket.Show();
-                displayScreen.lb_Ticket.Text = "You are not a registered customer!";
-                displayScreen.lb_Ticket.Font = new System.Drawing.Font("Cambria", 12);
-                displayScreen.lb_OptDetail.Location = new Point(255, 255);
-                displayScreen.lb_OptDetail.Text = "Please exit the garage!";
-                displayScreen.lb_OptDetail.Show();
+                displayScreen.lb_OptDetail.Hide();
+
+                System.Timers.Timer myTimer = new System.Timers.Timer();
+                myTimer.Elapsed += myTimer_Elapsed;
+                myTimer.Interval = 10000;
+                myTimer.Start();
             }
-            this.Close();
+            
         }
 
         private void myTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             System.Timers.Timer myTimer = (System.Timers.Timer)sender;
             myTimer.Stop();
+
+            this.Invoke((Action)delegate() { this.Close(); });
 
             //ElevatorDisplayScreen elevator = new ElevatorDisplayScreen(displayScreen);
             //elevator.Show();

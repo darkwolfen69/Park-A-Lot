@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceDisplayScreen));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.bn_walkin = new System.Windows.Forms.Button();
@@ -120,15 +121,17 @@
             // lb_Ticket
             // 
             this.lb_Ticket.AutoSize = true;
-            this.lb_Ticket.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Ticket.Font = new System.Drawing.Font("Cambria", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Ticket.ForeColor = System.Drawing.Color.Red;
-            this.lb_Ticket.Location = new System.Drawing.Point(283, 132);
+            this.lb_Ticket.Location = new System.Drawing.Point(200, 127);
             this.lb_Ticket.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_Ticket.Name = "lb_Ticket";
-            this.lb_Ticket.Size = new System.Drawing.Size(73, 57);
+            this.lb_Ticket.Size = new System.Drawing.Size(247, 86);
             this.lb_Ticket.TabIndex = 7;
-            this.lb_Ticket.Text = "---";
+            this.lb_Ticket.Text = "Parking Spot:\r\n1";
+            this.lb_Ticket.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lb_Ticket.Visible = false;
+            this.lb_Ticket.TextChanged += new System.EventHandler(this.lb_Ticket_TextChanged);
             // 
             // lb_ParkingInstructions
             // 
@@ -175,7 +178,6 @@
             this.ClientSize = new System.Drawing.Size(662, 368);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_ParkingInstructions);
-            this.Controls.Add(this.lb_Ticket);
             this.Controls.Add(this.lb_WalkinHeader);
             this.Controls.Add(this.lb_OptDetail);
             this.Controls.Add(this.lb_ResCusWarning);
@@ -183,6 +185,8 @@
             this.Controls.Add(this.bn_ResCust);
             this.Controls.Add(this.bn_walkin);
             this.Controls.Add(this.lb_header);
+            this.Controls.Add(this.lb_Ticket);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(10, 250);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EntranceDisplayScreen";

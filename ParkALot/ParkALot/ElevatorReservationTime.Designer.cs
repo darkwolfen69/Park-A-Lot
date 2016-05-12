@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ElevatorReservationTime));
             this.lb_TimeInstruction = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.bn_Submit = new System.Windows.Forms.Button();
             this.lb_Now = new System.Windows.Forms.Label();
+            this.lb_explination = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lb_TimeInstruction
             // 
             this.lb_TimeInstruction.AutoSize = true;
             this.lb_TimeInstruction.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TimeInstruction.Location = new System.Drawing.Point(15, 11);
+            this.lb_TimeInstruction.Location = new System.Drawing.Point(49, 9);
             this.lb_TimeInstruction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_TimeInstruction.Name = "lb_TimeInstruction";
-            this.lb_TimeInstruction.Size = new System.Drawing.Size(325, 19);
+            this.lb_TimeInstruction.Size = new System.Drawing.Size(264, 19);
             this.lb_TimeInstruction.TabIndex = 0;
-            this.lb_TimeInstruction.Text = "Please, enter the times you wish to reserve.";
+            this.lb_TimeInstruction.Text = "Please, enter reservation end time.";
             this.lb_TimeInstruction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -74,7 +76,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(97, 77);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
@@ -84,10 +86,10 @@
             // bn_Submit
             // 
             this.bn_Submit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bn_Submit.Location = new System.Drawing.Point(145, 120);
+            this.bn_Submit.Location = new System.Drawing.Point(145, 149);
             this.bn_Submit.Margin = new System.Windows.Forms.Padding(2);
             this.bn_Submit.Name = "bn_Submit";
-            this.bn_Submit.Size = new System.Drawing.Size(75, 46);
+            this.bn_Submit.Size = new System.Drawing.Size(75, 28);
             this.bn_Submit.TabIndex = 5;
             this.bn_Submit.Text = "Submit";
             this.bn_Submit.UseVisualStyleBackColor = true;
@@ -104,17 +106,31 @@
             this.lb_Now.TabIndex = 6;
             this.lb_Now.Text = "Now";
             // 
+            // lb_explination
+            // 
+            this.lb_explination.AutoSize = true;
+            this.lb_explination.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_explination.ForeColor = System.Drawing.Color.Red;
+            this.lb_explination.Location = new System.Drawing.Point(99, 105);
+            this.lb_explination.Name = "lb_explination";
+            this.lb_explination.Size = new System.Drawing.Size(209, 30);
+            this.lb_explination.TabIndex = 7;
+            this.lb_explination.Text = "Please, enter time in military format.\r\nex: 1:00pm is 13:00";
+            this.lb_explination.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ElevatorReservationTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 188);
+            this.Controls.Add(this.lb_explination);
             this.Controls.Add(this.lb_Now);
             this.Controls.Add(this.bn_Submit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_TimeInstruction);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(906, 440);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ElevatorReservationTime";
@@ -134,5 +150,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button bn_Submit;
         private System.Windows.Forms.Label lb_Now;
+        private System.Windows.Forms.Label lb_explination;
     }
 }

@@ -32,7 +32,6 @@ namespace ParkALot
 
         private void ElevatorReservationTime_Load(object sender, EventArgs e)
         {
-            string format = "HH:mm:ss";
             if (timeHour > 12)
             {
                 timeHour -= 12;

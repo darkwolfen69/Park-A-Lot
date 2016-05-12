@@ -32,6 +32,7 @@ namespace ParkALot
         private void bn_No_Click(object sender, EventArgs e)
         {
             elevatorDisplayScreen.lb_Display.Text = "Please, exit the parking garage.";
+            elevatorDisplayScreen.lb_Display.Location = new System.Drawing.Point(200,145);
             this.Close();
 
             System.Timers.Timer myTimer = new System.Timers.Timer();
@@ -54,6 +55,7 @@ namespace ParkALot
             ElevatorReservationTime newTime = new ElevatorReservationTime(elevatorDisplayScreen);
             newTime.Show();
             elevatorDisplayScreen.lb_Display.Text = "Please enter what time you will end your reservation.";
+            elevatorDisplayScreen.lb_Display.Location = new System.Drawing.Point(95, 145);
             this.Close();
         }
     }

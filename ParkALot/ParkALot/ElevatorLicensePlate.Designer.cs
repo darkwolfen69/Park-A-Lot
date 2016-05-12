@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ElevatorLicensePlate));
             this.label2 = new System.Windows.Forms.Label();
             this.bn_LPRead = new System.Windows.Forms.Button();
             this.tb_LPNum = new System.Windows.Forms.TextBox();
@@ -48,7 +49,7 @@
             // bn_LPRead
             // 
             this.bn_LPRead.Location = new System.Drawing.Point(102, 73);
-            this.bn_LPRead.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bn_LPRead.Margin = new System.Windows.Forms.Padding(2);
             this.bn_LPRead.Name = "bn_LPRead";
             this.bn_LPRead.Size = new System.Drawing.Size(69, 34);
             this.bn_LPRead.TabIndex = 50;
@@ -59,7 +60,7 @@
             // tb_LPNum
             // 
             this.tb_LPNum.Location = new System.Drawing.Point(20, 50);
-            this.tb_LPNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_LPNum.Margin = new System.Windows.Forms.Padding(2);
             this.tb_LPNum.Name = "tb_LPNum";
             this.tb_LPNum.Size = new System.Drawing.Size(236, 20);
             this.tb_LPNum.TabIndex = 49;
@@ -70,10 +71,10 @@
             this.label1.Location = new System.Drawing.Point(18, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 26);
+            this.label1.Size = new System.Drawing.Size(249, 26);
             this.label1.TabIndex = 48;
-            this.label1.Text = "License plate reader is currently scanning your \r\nlicense plate.  Please keep you" +
-    "r vehicle stopped.";
+            this.label1.Text = "This acts as the virtual licenses plate reader.\r\nPlease enter a 10 character lice" +
+    "nses plate number. ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ElevatorLicensePlate
@@ -85,8 +86,9 @@
             this.Controls.Add(this.bn_LPRead);
             this.Controls.Add(this.tb_LPNum);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(906, 440);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ElevatorLicensePlate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Park-A-Lot: Elevator";

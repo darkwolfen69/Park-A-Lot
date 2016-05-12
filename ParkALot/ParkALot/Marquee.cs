@@ -29,8 +29,10 @@ namespace ParkALot
         {
             Parking.updateReserved();
             Parking.updateWalkin();
-            thisForm.lb_marquee.Text = "There are " + Parking.WalkinCounter.ToString() + " spots available for Walkin,\nand "
-            + Parking.ReservedCounter.ToString() + " spots available for registered customers with reservations.";
+            thisForm.lb_marquee.Text = Parking.WalkinCounter.ToString() + "   Parking spots available for Dirve-in Customers\n\n"
+            + Parking.ReservedCounter.ToString() + "   Parking spots available for Registered Customers";
+            //thisForm.lb_marquee.Text = "There are " + Parking.WalkinCounter.ToString() + " spots available for Dirve-in Customers,\nand "
+            //+ Parking.ReservedCounter.ToString() + " spots available for registered customers with reservations.";
         }
     }
 }

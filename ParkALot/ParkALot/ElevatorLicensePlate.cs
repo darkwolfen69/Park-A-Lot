@@ -45,6 +45,7 @@ namespace ParkALot
                 else
                 {
                     elevatorDisplayScreen.lb_Display.Text = "You do not have a reservation at this time.\nWould you like to make a reservation?";
+                    elevatorDisplayScreen.lb_Display.Location = new System.Drawing.Point(155,140);
                     ElevatorReservedParking question = new ElevatorReservedParking(elevatorDisplayScreen, entranceDisplayScreen);
                     question.Show();
                 }
@@ -52,7 +53,7 @@ namespace ParkALot
             else
             {
                 elevatorDisplayScreen.lb_Display.Text = "You are not a registered customer.\nPlease exit the garage.";
-
+                elevatorDisplayScreen.lb_Display.Location = new System.Drawing.Point(185,140);
             }
             this.Close();
         }

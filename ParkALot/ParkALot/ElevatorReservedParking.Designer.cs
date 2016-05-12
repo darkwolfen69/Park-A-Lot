@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ElevatorReservedParking));
             this.lb_Reservation = new System.Windows.Forms.Label();
             this.bn_Yes = new System.Windows.Forms.Button();
             this.bn_No = new System.Windows.Forms.Button();
@@ -92,6 +93,7 @@
             this.Controls.Add(this.bn_No);
             this.Controls.Add(this.bn_Yes);
             this.Controls.Add(this.lb_Reservation);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(906, 440);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ElevatorReservedParking";

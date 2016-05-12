@@ -179,7 +179,7 @@ namespace ParkALot
             connection.Open();
 
             int parkingID = 0;
-            int resID = 0;
+            //int resID = 0;
 
             using(SqlCommand getParkingID = connection.CreateCommand())
             {
@@ -203,7 +203,7 @@ namespace ParkALot
             connection.Open();
 
             int parkingID = 0;
-            int resID = 0;
+            int resvID = 0;
 
             using(SqlCommand getParkingID = connection.CreateCommand())
             {
@@ -226,7 +226,7 @@ namespace ParkALot
                 {
                     while (reader.Read())
                     {
-                        resID = reader.GetInt32(0);
+                        resvID = reader.GetInt32(0);
                     }
                 }
             }
@@ -234,7 +234,7 @@ namespace ParkALot
             using(SqlCommand updateReservation = connection.CreateCommand())
             {
                 updateReservation.CommandText = "UPDATE dbo.Reservation SET ParkingSpaceID =" +
-                                                 parkingID + " WHERE CustomerID =" + customerNumber + " AND ReservationID = " + resID + ";";
+                                                 parkingID + " WHERE CustomerID =" + customerNumber + " AND ReservationID = " + resvID + ";";
                 updateReservation.ExecuteNonQuery();
 
                 updateReservation.CommandText = "UPDATE dbo.Parking SET IsAvailable= 'False' WHERE ParkingSpaceID =" + parkingID + ";";

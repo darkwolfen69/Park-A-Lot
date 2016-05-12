@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceLicensePlate));
             this.label2 = new System.Windows.Forms.Label();
             this.bn_LPRead = new System.Windows.Forms.Button();
             this.tb_LPNum = new System.Windows.Forms.TextBox();
@@ -70,10 +71,10 @@
             this.label1.Location = new System.Drawing.Point(18, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 26);
+            this.label1.Size = new System.Drawing.Size(249, 26);
             this.label1.TabIndex = 52;
-            this.label1.Text = "License plate reader is currently scanning your \r\nlicense plate.  Please keep you" +
-    "r vehicle stopped.";
+            this.label1.Text = "This acts as the virtual licenses plate reader.\r\nPlease enter a 10 character lice" +
+    "nses plate number. ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EntranceLicensePlate
@@ -85,6 +86,7 @@
             this.Controls.Add(this.bn_LPRead);
             this.Controls.Add(this.tb_LPNum);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(906, 440);
             this.Name = "EntranceLicensePlate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

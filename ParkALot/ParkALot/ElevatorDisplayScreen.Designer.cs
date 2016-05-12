@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ElevatorDisplayScreen));
             this.label2 = new System.Windows.Forms.Label();
             this.bn_PullForward = new System.Windows.Forms.Button();
             this.lb_Display = new System.Windows.Forms.Label();
@@ -53,7 +54,7 @@
             this.bn_PullForward.Name = "bn_PullForward";
             this.bn_PullForward.Size = new System.Drawing.Size(131, 41);
             this.bn_PullForward.TabIndex = 41;
-            this.bn_PullForward.Text = "Please, pull forward.";
+            this.bn_PullForward.Text = "Pulling forward.";
             this.bn_PullForward.UseVisualStyleBackColor = true;
             this.bn_PullForward.Click += new System.EventHandler(this.bn_PullForward_Click);
             // 
@@ -64,9 +65,10 @@
             this.lb_Display.Location = new System.Drawing.Point(95, 145);
             this.lb_Display.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_Display.Name = "lb_Display";
-            this.lb_Display.Size = new System.Drawing.Size(466, 22);
+            this.lb_Display.Size = new System.Drawing.Size(485, 44);
             this.lb_Display.TabIndex = 42;
-            this.lb_Display.Text = "Reading license plate.  Please, keep your vehicle stopped.";
+            this.lb_Display.Text = "This screen is you driving from the entrance to the elevator.\r\nYour licences plat" +
+    "e will be read again at the elevator. ";
             this.lb_Display.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lb_Display.TextChanged += new System.EventHandler(this.lb_Display_TextChanged);
             // 
@@ -91,6 +93,7 @@
             this.Controls.Add(this.bn_PullForward);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lb_header);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(10, 250);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ElevatorDisplayScreen";

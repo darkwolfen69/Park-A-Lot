@@ -20,6 +20,8 @@ namespace ParkALot
             InitializeComponent();
         }
 
+        //  I am guess this is here so that when the registered customer is done, the elevator display screen will
+        //  close and the entrance display screen will be left???
         public ElevatorDisplayScreen(EntranceDisplayScreen entranceDisplayScreen)
         {
             this.entranceDisplayScreen = entranceDisplayScreen;
@@ -33,6 +35,8 @@ namespace ParkALot
             ElevatorLicensePlate newVehicle = new ElevatorLicensePlate(this, entranceDisplayScreen);
             bn_PullForward.Hide();
             newVehicle.Show();
+
+            lb_Display.Text = "Reading license plate. Please, keep your vehicle stopped.";
         }
 
         private void lb_Display_TextChanged(object sender, EventArgs e)
