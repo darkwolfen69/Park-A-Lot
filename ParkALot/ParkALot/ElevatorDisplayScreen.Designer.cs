@@ -28,23 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lb_header = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bn_PullForward = new System.Windows.Forms.Button();
             this.lb_Display = new System.Windows.Forms.Label();
+            this.lb_header = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lb_header
-            // 
-            this.lb_header.AutoSize = true;
-            this.lb_header.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_header.Location = new System.Drawing.Point(169, 8);
-            this.lb_header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_header.Name = "lb_header";
-            this.lb_header.Size = new System.Drawing.Size(304, 32);
-            this.lb_header.TabIndex = 1;
-            this.lb_header.Text = "Welcome to Park-A-Lot!";
-            this.lb_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -61,7 +49,7 @@
             // 
             this.bn_PullForward.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bn_PullForward.Location = new System.Drawing.Point(266, 320);
-            this.bn_PullForward.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bn_PullForward.Margin = new System.Windows.Forms.Padding(2);
             this.bn_PullForward.Name = "bn_PullForward";
             this.bn_PullForward.Size = new System.Drawing.Size(131, 41);
             this.bn_PullForward.TabIndex = 41;
@@ -79,7 +67,20 @@
             this.lb_Display.Size = new System.Drawing.Size(466, 22);
             this.lb_Display.TabIndex = 42;
             this.lb_Display.Text = "Reading license plate.  Please, keep your vehicle stopped.";
+            this.lb_Display.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lb_Display.TextChanged += new System.EventHandler(this.lb_Display_TextChanged);
+            // 
+            // lb_header
+            // 
+            this.lb_header.AutoSize = true;
+            this.lb_header.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_header.Location = new System.Drawing.Point(169, 8);
+            this.lb_header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_header.Name = "lb_header";
+            this.lb_header.Size = new System.Drawing.Size(304, 32);
+            this.lb_header.TabIndex = 1;
+            this.lb_header.Text = "Welcome to Park-A-Lot!";
+            this.lb_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ElevatorDisplayScreen
             // 
@@ -91,7 +92,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lb_header);
             this.Location = new System.Drawing.Point(10, 250);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ElevatorDisplayScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Park-A-Lot: Elevator";
@@ -102,9 +103,9 @@
 
         #endregion
 
-        public System.Windows.Forms.Label lb_header;
-        public System.Windows.Forms.Label lb_Display;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button bn_PullForward;
+        public System.Windows.Forms.Label lb_Display;
+        public System.Windows.Forms.Label lb_header;
     }
 }

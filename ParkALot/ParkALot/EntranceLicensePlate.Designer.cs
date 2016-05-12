@@ -37,19 +37,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(270, 148);
+            this.label2.Location = new System.Drawing.Point(180, 96);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 20);
+            this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 55;
             this.label2.Text = "Park-A-Lot © 2016";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bn_LPRead
             // 
-            this.bn_LPRead.Location = new System.Drawing.Point(153, 112);
-            this.bn_LPRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bn_LPRead.Location = new System.Drawing.Point(102, 73);
+            this.bn_LPRead.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.bn_LPRead.Name = "bn_LPRead";
-            this.bn_LPRead.Size = new System.Drawing.Size(104, 52);
+            this.bn_LPRead.Size = new System.Drawing.Size(69, 34);
             this.bn_LPRead.TabIndex = 54;
             this.bn_LPRead.Text = "Search";
             this.bn_LPRead.UseVisualStyleBackColor = true;
@@ -57,34 +58,34 @@
             // 
             // tb_LPNum
             // 
-            this.tb_LPNum.Location = new System.Drawing.Point(30, 78);
-            this.tb_LPNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tb_LPNum.Location = new System.Drawing.Point(20, 51);
+            this.tb_LPNum.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tb_LPNum.Name = "tb_LPNum";
-            this.tb_LPNum.Size = new System.Drawing.Size(352, 26);
+            this.tb_LPNum.Size = new System.Drawing.Size(236, 20);
             this.tb_LPNum.TabIndex = 53;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 11);
+            this.label1.Location = new System.Drawing.Point(18, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(348, 40);
+            this.label1.Size = new System.Drawing.Size(238, 26);
             this.label1.TabIndex = 52;
             this.label1.Text = "License plate reader is currently scanning your \r\nlicense plate.  Please keep you" +
     "r vehicle stopped.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EntranceLicensePlate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 180);
+            this.ClientSize = new System.Drawing.Size(293, 117);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bn_LPRead);
             this.Controls.Add(this.tb_LPNum);
             this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(906, 440);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EntranceLicensePlate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "EntranceLicensePlate";

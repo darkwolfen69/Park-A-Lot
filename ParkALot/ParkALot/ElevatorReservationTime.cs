@@ -32,25 +32,26 @@ namespace ParkALot
 
         private void ElevatorReservationTime_Load(object sender, EventArgs e)
         {
+            string format = "HH:mm:ss";
             if (timeHour > 12)
             {
                 timeHour -= 12;
 
-                lb_Now.Text = timeHour + ":" + timeMin + " PM";
+                lb_Now.Text = timeHour + ":" + timeMin.ToString("00") + " PM";
             }
             else if (timeHour == 0)
             {
                 timeHour = 12;
 
-                lb_Now.Text = timeHour + ":" + timeMin + " AM";
+                lb_Now.Text = timeHour + ":" + timeMin.ToString("00") + " AM";
             }
             else if (timeHour == 12)
             {
-                lb_Now.Text = timeHour + ":" + timeMin + " PM";
+                lb_Now.Text = timeHour + ":" + timeMin.ToString("00") + " PM";
             }
             else
             {
-                lb_Now.Text = timeHour + ":" + timeMin + " AM";
+                lb_Now.Text = timeHour + ":" + timeMin.ToString("00") + " AM";
             }
         }
 
@@ -61,7 +62,7 @@ namespace ParkALot
             DateTime timeEnd = DateTime.Parse(textBox2.Text);
             int custNum = int.Parse(Customer.CustNum);
 
-            if (Parking.ReservedCounter < 50)
+            if (Parking.ReservedCounter > 0)
             {
                 DO.InsertNewReservation(custNum,Customer.LicensePlate, DateTime.Now.Date,DateTime.Now,timeEnd);
                 DO.ReturnBasedOnLicensePlateNumber(Customer.LicensePlate);

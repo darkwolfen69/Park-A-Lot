@@ -46,12 +46,13 @@
             this.lb_TimeInstruction.Size = new System.Drawing.Size(325, 19);
             this.lb_TimeInstruction.TabIndex = 0;
             this.lb_TimeInstruction.Text = "Please, enter the times you wish to reserve.";
+            this.lb_TimeInstruction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 45);
+            this.label1.Location = new System.Drawing.Point(44, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 19);
@@ -75,7 +76,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("High Tower Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(97, 77);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(213, 26);
             this.textBox2.TabIndex = 3;
@@ -84,7 +85,7 @@
             // 
             this.bn_Submit.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bn_Submit.Location = new System.Drawing.Point(145, 120);
-            this.bn_Submit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bn_Submit.Margin = new System.Windows.Forms.Padding(2);
             this.bn_Submit.Name = "bn_Submit";
             this.bn_Submit.Size = new System.Drawing.Size(75, 46);
             this.bn_Submit.TabIndex = 5;
@@ -115,7 +116,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_TimeInstruction);
             this.Location = new System.Drawing.Point(906, 440);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ElevatorReservationTime";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Park-A-Lot: Elevator";

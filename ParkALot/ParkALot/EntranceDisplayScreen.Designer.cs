@@ -29,30 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lb_header = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.bn_walkin = new System.Windows.Forms.Button();
             this.bn_ResCust = new System.Windows.Forms.Button();
             this.lb_WalkinWarning = new System.Windows.Forms.Label();
             this.lb_ResCusWarning = new System.Windows.Forms.Label();
             this.lb_OptDetail = new System.Windows.Forms.Label();
-            this.lb_WalkinHeader = new System.Windows.Forms.Label();
             this.lb_Ticket = new System.Windows.Forms.Label();
             this.lb_ParkingInstructions = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_header = new System.Windows.Forms.Label();
+            this.lb_WalkinHeader = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lb_header
+            // label1
             // 
-            this.lb_header.AutoSize = true;
-            this.lb_header.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_header.Location = new System.Drawing.Point(169, 8);
-            this.lb_header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_header.Name = "lb_header";
-            this.lb_header.Size = new System.Drawing.Size(304, 32);
-            this.lb_header.TabIndex = 0;
-            this.lb_header.Text = "Welcome to Park-A-Lot!";
-            this.lb_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(558, 347);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Park-A-Lot © 2016";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bn_walkin
             // 
@@ -89,7 +88,7 @@
             this.lb_WalkinWarning.Size = new System.Drawing.Size(232, 34);
             this.lb_WalkinWarning.TabIndex = 3;
             this.lb_WalkinWarning.Text = "Drive-In customers are only \r\nallowed to park on the ground floor.";
-            this.lb_WalkinWarning.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lb_WalkinWarning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_ResCusWarning
             // 
@@ -102,7 +101,7 @@
             this.lb_ResCusWarning.Size = new System.Drawing.Size(235, 34);
             this.lb_ResCusWarning.TabIndex = 4;
             this.lb_ResCusWarning.Text = "Customers with reservations will be \r\nallowed to park on the upper levels.";
-            this.lb_ResCusWarning.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lb_ResCusWarning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_OptDetail
             // 
@@ -115,19 +114,8 @@
             this.lb_OptDetail.Size = new System.Drawing.Size(331, 19);
             this.lb_OptDetail.TabIndex = 5;
             this.lb_OptDetail.Text = "Please choose the option that applies to you!";
+            this.lb_OptDetail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lb_OptDetail.TextChanged += new System.EventHandler(this.lb_OptDetail_TextChanged);
-            // 
-            // lb_WalkinHeader
-            // 
-            this.lb_WalkinHeader.AutoSize = true;
-            this.lb_WalkinHeader.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_WalkinHeader.Location = new System.Drawing.Point(180, 76);
-            this.lb_WalkinHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_WalkinHeader.Name = "lb_WalkinHeader";
-            this.lb_WalkinHeader.Size = new System.Drawing.Size(284, 22);
-            this.lb_WalkinHeader.TabIndex = 6;
-            this.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!";
-            this.lb_WalkinHeader.Visible = false;
             // 
             // lb_Ticket
             // 
@@ -155,16 +143,30 @@
             this.lb_ParkingInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lb_ParkingInstructions.Visible = false;
             // 
-            // label1
+            // lb_header
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(558, 347);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Park-A-Lot © 2016";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_header.AutoSize = true;
+            this.lb_header.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_header.Location = new System.Drawing.Point(169, 8);
+            this.lb_header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_header.Name = "lb_header";
+            this.lb_header.Size = new System.Drawing.Size(304, 32);
+            this.lb_header.TabIndex = 0;
+            this.lb_header.Text = "Welcome to Park-A-Lot!";
+            this.lb_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_WalkinHeader
+            // 
+            this.lb_WalkinHeader.AutoSize = true;
+            this.lb_WalkinHeader.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_WalkinHeader.Location = new System.Drawing.Point(180, 76);
+            this.lb_WalkinHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_WalkinHeader.Name = "lb_WalkinHeader";
+            this.lb_WalkinHeader.Size = new System.Drawing.Size(284, 22);
+            this.lb_WalkinHeader.TabIndex = 6;
+            this.lb_WalkinHeader.Text = "Thank you for using Park-A-Lot!";
+            this.lb_WalkinHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_WalkinHeader.Visible = false;
             // 
             // EntranceDisplayScreen
             // 
@@ -194,17 +196,17 @@
 
         #endregion
 
-        public System.Windows.Forms.Label lb_header;
+        public System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button bn_walkin;
         public System.Windows.Forms.Button bn_ResCust;
         public System.Windows.Forms.Label lb_WalkinWarning;
         public System.Windows.Forms.Label lb_ResCusWarning;
         public System.Windows.Forms.Label lb_OptDetail;
-        public System.Windows.Forms.Label lb_WalkinHeader;
         public System.Windows.Forms.Label lb_Ticket;
         public System.Windows.Forms.Label lb_ParkingInstructions;
-        public System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lb_header;
+        public System.Windows.Forms.Label lb_WalkinHeader;
 
     }
 }

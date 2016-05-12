@@ -82,12 +82,6 @@ namespace ParkALot
 
             bool exists = true;
 
-
-            //issue with string vs int on this licenseNumber. i did this so i could run the program past it...
-            //int intLicenseNumber;
-            //int.TryParse(licenseNumber, out intLicenseNumber);
-            //replaced licenseNumber in if statement with intLicenseNumber ....
-            // Sincerely, Kris
             for (int i = 0; i < customers.Count; i++)
             {
                 if (customers[i] == licenseNumber)
@@ -107,8 +101,6 @@ namespace ParkALot
         public void ReturnBasedOnLicensePlateNumber(string licensePlateNumber)
         {
             SqlConnection connection = new SqlConnection();
-
-            //List<string> output = new List<string>();
 
             connection.ConnectionString = "Server=cis1.actx.edu;Database=ParkALotDatabase;User Id=db2;Password = db20;";
             connection.Open();
