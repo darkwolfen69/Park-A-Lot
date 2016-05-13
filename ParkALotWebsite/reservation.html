@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--semester project group A2 -->
+<html lang="en">
+
+<head>
+<title>Park-A-Lot</title>
+<meta charset="utf-8">
+
+<!--[if 1t IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<!--[if IE ]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<header>
+<h1><bold>Park-A-Lot</bold></h1><br>
+</header>
+
+</head>
+
+<body>
+
+<nav>
+    <ul>
+		<li><a href="personal.html">Register</a></li>
+	</ul>
+</nav>
+
+<form method="post" action="insert.php">
+
+
+<h3><bold>Reservation</bold></h3>  
+Date of Reservation(mm/dd/yyyy):<br>
+  <!--<script type="text/javascript"
+src="http://www.snaphost.com/jquery/Calendar.aspx"></script>-->
+<input type="date" name="dateOfReservation"><br><br>
+
+Time of Reservation:<br><br>
+Time In:&nbsp <input type="text" name="timein"> <br><br>
+
+Time Out:&nbsp <input type="text" name= "timeout"><br><br>
+
+<input type="submit" name="submitReservation" value="Submit"><br><br><br>
+
+ </form>
+<footer>
+    <small><italic>Copyright &copy; 2016 Park-A-Lot</italic></small><br>
+</footer>
+</body>
+</html>
