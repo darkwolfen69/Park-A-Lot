@@ -70,7 +70,7 @@
             this.Controls.Add(this.lblCar);
             this.Location = new System.Drawing.Point(906, 500);
             this.Name = "FancyCar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FancyCar";
             this.ResumeLayout(false);
             this.PerformLayout();

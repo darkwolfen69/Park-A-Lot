@@ -138,7 +138,7 @@ namespace ParkALot
             System.Timers.Timer myTimer = (System.Timers.Timer)sender;
             myTimer.Stop();
 
-            this.Invoke((Action)delegate() { this.Close(); });
+            this.Invoke((Action)delegate() { this.Close();});
 
             //ElevatorDisplayScreen elevator = new ElevatorDisplayScreen(displayScreen);
             //elevator.Show();

@@ -22,11 +22,15 @@ namespace ParkALot
         //exit the application
         private void btnSubmitName_Click(object sender, EventArgs e)
         {
-            if(txtCarName.Text == "Ferari" || txtCarName.Text == "Bugatti" || 
+            if(txtCarName.Text == "Ferrari" || txtCarName.Text == "Bugatti" || 
                 txtCarName.Text == "Lamborghini")
             {
                 MessageBox.Show("You have a premium car.\nYou may now enter.");
-                this.Close();
+                this.Location = new System.Drawing.Point(10, 250);
+                EntranceDisplayScreen newEnteranceDisplayScreen = new EntranceDisplayScreen();
+                newEnteranceDisplayScreen.ShowDialog();
+                
+                
             }
             else
             {

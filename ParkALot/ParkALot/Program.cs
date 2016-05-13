@@ -16,7 +16,8 @@ namespace ParkALot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EntranceDisplayScreen());
+            //Application.Run(new EntranceDisplayScreen());
+            Application.Run(new FancyCar());
         }
     }
 }

@@ -20,6 +20,7 @@ namespace ParkALot
 
         private void bn_walkin_Click(object sender, EventArgs e)
         {
+           
             Parking.updateWalkin();
             if (Parking.nextWalkinAvailable != 0)
             {
@@ -75,8 +76,8 @@ namespace ParkALot
         {
             Marquee newMarquee = new Marquee();
             newMarquee.Show();
-            FancyCar newCar = new FancyCar();
-            newCar.Show();
+            //FancyCar newCar = new FancyCar();
+            //newCar.Show();
             ExitLicensePlate exit = new ExitLicensePlate();
             exit.Show();
         }
